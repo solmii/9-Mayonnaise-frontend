@@ -1,0 +1,41 @@
+body {
+	font-family: 'Sans-serif';
+	font-size: 100%;
+}
+
+// class
+.black {
+	color: #111;
+}
+
+.white-bg {
+	background-color: white;
+}
+
+.font-b {
+	font-weight: 700;
+}
+
+.m-auto {
+	margin: 0 auto;
+}
+
+.p-r {
+	position: relative;
+}
+
+.p-a {
+	position: absolute;
+}
+
+.p-s {
+	position: sticky;
+}
+
+.out_n {
+	outline: none;
+}
+
+.underline {
+	border-bottom: 1px solid #111;
+}
