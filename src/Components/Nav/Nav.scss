@@ -1,0 +1,267 @@
+.Nav {
+  position: relative;
+  .overlay {
+    &.activate {
+      position: absolute;
+      top: 0px;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.38);
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 5;
+    background-color: white;
+    .logo {
+      img {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 130px;
+        height: 21.56px;
+      }
+    }
+
+    .iconsection {
+      position: absolute;
+      left: 1670px;
+      top: 18px;
+      .icons {
+        display: flex;
+        &:hover {
+          cursor: pointer;
+        }
+        .icon0,
+        .icon1,
+        .icon2,
+        .icon2,
+        .icon3 {
+          width: 24px;
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .navBar {
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      position: relative;
+
+      .show {
+        display: block;
+      }
+      .hide {
+        display: none;
+      }
+
+      .brand,
+      .best,
+      .skinCare,
+      .makeUp,
+      .homme,
+      .event {
+        padding: 20px;
+        margin-top: 5px;
+        font: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000000;
+        &:hover {
+          cursor: pointer;
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .blackBar {
+          width: 0;
+          height: 4px;
+          background-color: black;
+          transition: width 0.2s ease-in;
+
+          &.active {
+            width: 100%;
+          }
+        }
+      }
+
+      .brandUnderBar,
+      .bestUnderBar,
+      .skinUnderBar,
+      .makeUpUnderBar,
+      .hommeUnderBar,
+      .eventUnderBar {
+        position: absolute;
+        bottom: 0px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        width: 120px;
+      }
+      .brandUnderBar {
+        left: 635px;
+      }
+      .bestUnderBar {
+        left: 760px;
+      }
+      .skinUnderBar {
+        left: 895px;
+      }
+      .makeUpUnderBar {
+        left: 997px;
+      }
+      .hommeUnderBar {
+        left: 1090px;
+      }
+      .eventUnderBar {
+        left: 1170px;
+      }
+
+      .brand,
+      .best {
+        &:hover {
+          cursor: pointer;
+        }
+        .brandDropDown {
+          position: absolute;
+          top: 60px;
+          left: 0;
+          margin-left: 0;
+          width: 100%;
+          height: 50px;
+          background-color: rgb(245, 245, 245);
+
+          // background-color: rgba(230, 230, 230, 0.308);
+          border-top: rgba(199, 198, 198, 0.308) solid thin;
+          border-bottom: rgba(199, 198, 198, 0.308) solid thin;
+        }
+        .brandSubSections,
+        .bestSubSections {
+          display: flex;
+          justify-content: center;
+          margin-left: 40px;
+
+          li {
+            padding-right: 54px;
+            padding-left: 22px;
+            padding-top: 15px;
+            font-size: 15px;
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .skinDropDown,
+      .makeUpDropDown,
+      .hommeDropDown {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        height: 500px;
+        background-color: rgb(245, 245, 245);
+        // background-color: rgba(230, 230, 230, 0.308);
+        border-top: rgba(199, 198, 198, 0.308) solid thin;
+        border-bottom: rgba(199, 198, 198, 0.308) solid thin;
+      }
+
+      .wholeColumn {
+        display: flex;
+        padding-left: 480px;
+        padding-top: 60px;
+
+        .seeAll {
+          position: absolute;
+          top: 30px;
+          left: 477px;
+          &:hover {
+            font-weight: bolder;
+          }
+        }
+
+        .firstColumn,
+        .secondColumn,
+        .thirdColumn {
+          font-size: 14px;
+          width: 250px;
+          color: rgb(58, 57, 57);
+          padding-bottom: 8px;
+
+          .underline {
+            border-bottom: rgb(54, 54, 54) solid thin;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 170px;
+          }
+          li {
+            padding-top: 13px;
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .fourthColumn {
+          padding-top: 250px;
+          font-size: 14px;
+          width: 250px;
+          color: rgb(58, 57, 57);
+          padding-bottom: 8px;
+
+          :first-child {
+            margin-top: 20px;
+            color: rgb(65, 105, 236);
+            font-size: 15px;
+          }
+
+          .underline {
+            border-bottom: rgb(54, 54, 54) solid thin;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            width: 170px;
+          }
+          li {
+            padding-top: 14px;
+            padding-bottom: 0px;
+            font-size: 15px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          img {
+            position: absolute;
+            padding-left: 20px;
+            bottom: 180px;
+            right: 450px;
+            height: 280px;
+            width: 260px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*display: 순서
+    flex-direction:
+    justify-content:
+    align-items:
+    position:
+    top:
+    left:
+    width:
+    height:
+    margin:
+    padding:
+    border:
+    font-family: 돋움, Dotum, sans-seri
+    font-size:
+    color:
+    background-color:*/

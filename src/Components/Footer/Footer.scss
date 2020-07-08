@@ -1,0 +1,95 @@
+.footer {
+  position: fixed;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+
+  .footerBar {
+    display: flex;
+    padding-left: 320px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-top: thin rgb(216, 214, 214) solid;
+    border-bottom: thin rgb(216, 214, 214) solid;
+
+    .company,
+    .service,
+    .ugc,
+    .personal,
+    .beauty,
+    .sitemap,
+    .notice {
+      margin-left: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 13.5px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000000;
+    }
+    .personal {
+      font-weight: bold;
+    }
+  }
+
+  .bottomInfo {
+    display: flex;
+    margin-left: 320px;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    font-size: 14.5px;
+    .first {
+      padding-left: 40px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+    .second {
+      padding-left: 15px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      .slash {
+        color: rgb(216, 214, 214);
+      }
+    }
+  }
+  .third {
+    margin-left: 320px;
+    padding-left: 40px;
+    font-size: 14.5px;
+    font-family: Helvetica, sans-serif;
+  }
+  .social {
+    position: fixed;
+    right: 370px;
+    bottom: 165px;
+    .facebook,
+    .insta,
+    .youtube {
+      padding-left: 20px;
+    }
+  }
+  .wa {
+    position: fixed;
+    right: 370px;
+    bottom: 80px;
+    height: 55px;
+  }
+}
+
+/*display: 순서
+      flex-direction:
+      justify-content:
+      align-items:
+      position:
+      top:
+      left:
+      width:
+      height:
+      margin:
+      padding:
+      border:
+      font-family: 돋움, Dotum, sans-seri
+      font-size:
+      color:
+      background-color:*/
