@@ -1,5 +1,12 @@
+@font-face {
+	font-family: 'Arita-dotum-Medium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
-	font-family: 'Sans-serif';
+	font-family: 'Arita-dotum-Medium', sans-serif;
 	font-size: 100%;
 }
 
@@ -8,8 +15,20 @@ body {
 	color: #111;
 }
 
+.gray {
+	color: #5f5f5f;
+}
+
+.red {
+	color: #b30b0b;
+}
+
 .white-bg {
 	background-color: white;
+}
+
+.main-font {
+	font-family: 'Arita-dotum-Medium', sans-serif;
 }
 
 .font-b {
@@ -37,5 +56,9 @@ body {
 }
 
 .underline {
-	border-bottom: 1px solid #111;
+	border-bottom: 1px solid rgba(95, 95, 95, 0.4);
+}
+
+.line-h {
+	line-height: 1.2;
 }
