@@ -116,9 +116,6 @@ const Login = () => {
           로그인 하기
         </button>
         <KakaoTalkLogin />
-        {/* <button className="kakaoBtn main-font" onClick={handleKakaoSubmit}>
-          카카오톡으로 로그인 하기
-        </button> */}
       </LoginForm>
     </LoginSection>
   );
