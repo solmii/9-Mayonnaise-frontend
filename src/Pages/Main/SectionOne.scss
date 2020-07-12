@@ -1,0 +1,84 @@
+.MainSlide {
+  width: 1920px;
+  height: 818px;
+  display: flex;
+  position: absolute;
+  margin-top: 60px;
+  z-index: 1000;
+
+  .awssld__content {
+    .slideTextBox {
+      position: absolute;
+
+      top: 50%;
+      left: 200px;
+      transform: translateY(-50%);
+
+      h3 {
+        font-size: 25px;
+        font-weight: 300;
+      }
+
+      h2 {
+        font-size: 70px;
+        padding: 30px 0;
+        line-height: 85px;
+      }
+
+      span {
+        display: block;
+        padding: 15px 10px;
+        width: 200px;
+        font-size: 14px;
+
+        text-align: center;
+        font-weight: 400;
+
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .TextBoxCenter {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      span {
+        width: 180px;
+        margin-right: 15px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .awssld__bullets {
+    bottom: 50px;
+
+    button {
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      border-radius: 50%;
+      background: #fff0;
+      border: 1px solid #fff;
+      transition: transform 0.225s cubic-bezier(0.8, 1.35, 0.75, 1.45);
+    }
+
+    .awssld__bullets--active {
+      transform: scale(1.2);
+    }
+  }
+  .awssld__controls button {
+    z-index: 2;
+  }
+  .awssld__controls__arrow-left {
+    width: 0;
+    height: 0;
+  }
+  .awssld__controls__arrow-right {
+    width: 0;
+    height: 0;
+  }
+}
+.awssld__box awssld--active {
+}
