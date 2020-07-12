@@ -143,7 +143,23 @@ const SignUp = () => {
   const onSubmit = (data) => {
     if (idValidation && pwValidation) {
       clauseAll || (clause1 && clause2)
-        ? console.log(data) // 백한테 데이터 전송
+        ? fetch("http://10.58.6.55:8000/account/sign_up", {
+            method: "post",
+            headers: {},
+            body: JSON.stringify({
+              name: data.name,
+              password: data.password,
+              birthdate: data.birthDate,
+              gender: data.gender,
+              phone_number: data.phoneNumber,
+              user_id: data.id,
+            }),
+          }).then((res) => {
+            if (res.status === 200 || res.status === 201) {
+              alert("회원가입이 완료되었습니다.");
+              this.props.history.push("/login");
+            }
+          })
         : alert("필수 동의 항목에 동의해 주세요");
     } else {
       alert("회원 정보를 입력해주세요.");
