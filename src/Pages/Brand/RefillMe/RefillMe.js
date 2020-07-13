@@ -328,7 +328,7 @@ const Nav = styled.div`
   width: 100vw;
   height: 60px;
   z-index: 200;
-  background-color: skyblue;
+  background-color: white;
 `;
 
 const RefillMeVideo = styled.article`

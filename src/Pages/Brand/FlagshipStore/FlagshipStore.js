@@ -14,7 +14,7 @@ const flagship_store = {
 };
 
 const FlagshipStore = () => {
-  const [activeTab, setActiveTab] = useState(3);
+  const [activeTab, setActiveTab] = useState(2);
   return (
     <>
       <CrumbNav>

@@ -43,11 +43,13 @@ const ModalBtn = () => {
 export default ModalBtn;
 
 const ReviewBtn = styled.button`
+  margin-left: 69%;
   padding: 10px 40px;
   border: 1px solid #444;
   font-size: 15px;
   color: #444;
   background-color: white;
+  z-index: 100;
   transition: all 0.2s ease-in-out;
 
   &:hover {
