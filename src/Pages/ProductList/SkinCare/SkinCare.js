@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./SkinCare.scss";
-
 class SkinCare extends Component {
   constructor() {
     super();
@@ -16,6 +15,8 @@ class SkinCare extends Component {
   }
 
   render() {
+    const { products } = this.state;
+
     return (
       <div className="SkinCare">
         <div className="headerContainer">
@@ -36,12 +37,12 @@ class SkinCare extends Component {
           </div>
         </div>
         <div className="numberOfProducts">
-          스킨케어 {this.state.products.length}개 상품
+          스킨케어 {products.length}개 상품
         </div>
         <div className="categoryBoxIsOpened hide"></div>
         <div className="mainContentsWhole">
           <div className="subBox">
-            {this.state.products.map((element) => {
+            {products.map((element) => {
               return (
                 <div className="productBox">
                   <img src={element.product_image} alt="Laneige" />
