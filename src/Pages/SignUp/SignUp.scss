@@ -1,0 +1,247 @@
+.SignUp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	font-family: '맑은 고딕', '돋움', Dotum, sans-serif;
+
+	span {
+		color: #062c5e;
+	}
+
+	header {
+		font-size: 18px;
+		font-weight: 700;
+		width: 100vw;
+		height: 60px;
+		margin-bottom: 10px;
+		padding-top: 22px;
+		border-bottom: 1px solid #d2d2d2;
+		text-align: center;
+		color: #88a2c3;
+		background-color: #f3f3f3;
+	}
+
+	.signUpTitleForm {
+		max-width: 460px;
+		padding: 36px 13px 50px 13px;
+
+		h1 {
+			margin-bottom: 10px;
+			font-size: 32px;
+			font-weight: 700;
+			line-height: 1.2;
+		}
+
+		p {
+			font-size: 15px;
+			line-height: 1.3;
+		}
+	}
+
+	.signUpInputForm {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		width: 100%;
+		max-width: 460px;
+
+		.userInput {
+			margin: 6px 10px;
+			padding: 18px 15px 17px;
+			border: 1px solid #dadada;
+			font-size: 16px;
+			color: #929292;
+
+			&:focus {
+				outline: none;
+				border: 1px solid #b5b5b5;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+			}
+
+			&:nth-child(2) {
+				width: 66%;
+			}
+		}
+
+		p {
+			margin: 20px 0 10px 11px;
+			font-weight: bold;
+			font-size: 14px;
+		}
+	}
+
+	.genderRadioForm {
+		display: flex;
+		align-items: center;
+
+		input {
+			width: 266px;
+		}
+
+		label {
+			height: 52px;
+			color: #929292;
+		}
+
+		input[type='radio'] {
+			display: none;
+
+			& + span {
+				display: inline-block;
+				width: 82px;
+				height: 52px;
+				border: 1px solid #dfdfdf;
+				text-align: center;
+				font-weight: 500;
+				line-height: 52px;
+				cursor: pointer;
+			}
+
+			&:checked + span {
+				border-color: #062c5e;
+				color: #062c5e;
+
+				&:before {
+					content: '✓';
+					width: 25px;
+					height: 25px;
+					padding-right: 5px;
+					color: #062c5e;
+					text-align: center;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.phoneNumberForm {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: 10px;
+
+		select {
+			width: 32%;
+			height: 54px;
+			padding: 3px 20px 0;
+			border: 1px solid #dadada;
+			font-size: 16px;
+			outline: none;
+		}
+	}
+
+	.radioBtn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+
+		input[type='radio'] + span {
+			font-size: 15px;
+			line-height: 25px;
+			color: #3b3b3b;
+			cursor: pointer;
+		}
+
+		input[type='radio']:checked + span {
+			color: #062c5e;
+		}
+	}
+
+	.checkBtn {
+		position: relative;
+		padding: 5px;
+
+		span {
+			padding-left: 5px;
+			color: #3b3b3b;
+		}
+
+		button {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 16px;
+			color: #d2d2d2;
+		}
+	}
+
+	.clausContainer {
+		padding: 20px 10px;
+
+		.allAgreeBtn {
+			position: relative;
+			padding: 10px;
+			border: 1px solid #dadada;
+
+			span {
+				position: absolute;
+				top: 13px;
+				font-size: 21px;
+				color: #062c5e;
+			}
+
+			button {
+				position: absolute;
+				top: 11px;
+				right: 30px;
+			}
+		}
+
+		.clauseForm {
+			.agreeText {
+				padding-top: 10px;
+				line-height: 22px;
+				font-size: 13px;
+				color: #707070;
+			}
+
+			h3 {
+				display: inline-block;
+				padding-top: 28px;
+				font-weight: bold;
+				font-size: 15px;
+				color: #3b3b3b;
+			}
+
+			.clausDescription {
+				display: block;
+				padding-left: 32px;
+				font-size: 13px;
+				line-height: 15px;
+				color: #707070;
+			}
+
+			.clausDescription2 {
+				display: inline;
+				padding-left: 6px;
+				font-size: 13px;
+				font-weight: bold;
+				line-height: 15px;
+				color: #707070;
+			}
+		}
+	}
+
+	.signupSubmitBtn {
+		width: 100%;
+		padding: 14px 0;
+		border: 1px solid transparent;
+		border-color: #555;
+		font-size: 20px;
+		text-align: center;
+		color: #fff;
+		background-color: #555;
+	}
+
+	.foreignRegistration {
+		margin: 14px auto;
+		padding: 0 15px;
+		border: 1px solid #a3a3a3;
+		border-radius: 30px;
+		font-size: 15px;
+		line-height: 32px;
+		color: #484848;
+	}
+}

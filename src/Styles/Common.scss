@@ -1,41 +1,78 @@
+@font-face {
+	font-family: 'JSDongkang-Bold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-BoldA1.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Arita-dotum-Medium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'KOMACON';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/KOMACON.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
-	font-family: 'Sans-serif';
+	font-family: 'Arita-dotum-Medium', sans-serif;
 	font-size: 100%;
 }
 
 // class
-.black {
-	color: #111;
+.red {
+	color: #b30b0b;
 }
 
 .white-bg {
 	background-color: white;
 }
 
-.font-b {
-	font-weight: 700;
+.mainFont {
+	font-family: 'Arita-dotum-Medium', sans-serif;
 }
 
-.m-auto {
+.mAuto {
 	margin: 0 auto;
 }
 
-.p-r {
+.positionR {
 	position: relative;
 }
 
-.p-a {
+.positionA {
 	position: absolute;
 }
 
-.p-s {
+.positionS {
 	position: sticky;
 }
 
-.out_n {
+.outNone {
 	outline: none;
 }
 
 .underline {
-	border-bottom: 1px solid #111;
+	border-bottom: 1px solid rgba(95, 95, 95, 0.4);
+}
+
+.lineH {
+	line-height: 1.2;
+}
+
+.brandFont {
+	font-family: 'JSDongkang-Bold', sans-serif;
+}
+
+.mainFont {
+	font-family: 'Arita-dotum-Medium', sans-serif;
+}
+
+.numFont {
+	font-family: 'KOMACON', sans-serif;
 }
