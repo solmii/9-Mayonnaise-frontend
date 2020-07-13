@@ -20,7 +20,7 @@ class ProductDetailGrid extends React.Component {
   //   console.log("pw >>> ", this.state.pw);
   // };
 
-  // clickHandler = () => {
+  // cfigureckHandler = () => {
   //   //e.prevent.Default();
   //   //POST
   //   fetch("http://10.58.0.88:8000/user/signin", {
@@ -42,89 +42,49 @@ class ProductDetailGrid extends React.Component {
   render() {
     return (
       <section id="pattern" class="pattern">
-        <ul class="grid">
-          <li>
+        <div class="grid">
+          <figure>
             <div>
-              <a href="#">
-                1quires a valid value to be accessible. Provide a valid,
-                navigable address as the href value. If you cannot provide a
-                valid href, but still need the element to resemble a link, use a
-                button and change it wquires a valid value to be accessible.
-                Provide a valid, navigable address as the href value. If you
-                cannot provide a valid href, but still need the element to
-                resemble a link, use a button and change it wquires a valid
-                value to be accessible. Provide a valid, navigable address as
-                the href value. If you cannot provide a valid href, but still
-                need the element to resemble a lquires a valid value to be
-                accessible. Provide a valid, navigable address as the href
-                value. If you cannot provide a valid href, but still need the
-                element to resemble a link, use a button and change it wquires a
-                valid value to be accessible. Provide a valid, navigable address
-                as the href value. If you cannot provide a valid href, but still
-                need the element to resemble a lquires a valid value to be
-                accessible. Provide a valid, navigable address as the href
-                value. If you cannot provide a valid href, but still need the
-                element to resemble a link, use a button and change it wink, use
-                a button and change it wink, use a button and change it w
-              </a>
+              1sdasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssssssssssssssssssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
             <div>
-              <a href="#">2</a>
+              2asdssssasdssssasddssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
             <div>
-              <a href="#">3</a>
+              3asdssssasdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssssasdssssasdssssasdssssasdssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
             <div>
-              <a href="#">4</a>
+              sasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
             <div>
-              <a href="#">5</a>
+              sasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
             <div>
-              <a href="#">6</a>
+              asdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssss
             </div>
-          </li>
-          <li>
+          </figure>
+          <figure>
+            <div>saasdssssasdssssasdssssasdsssssdssssasdssssasdssss</div>
+          </figure>
+          <figure>
+            <div>asdssssasdssssasdssssasdssssasdssssasdssssasdsssss</div>
+          </figure>
+          <figure>
             <div>
-              <a href="#">7</a>
+              asdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssss
             </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">8</a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">9</a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">10</a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">11</a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">12</a>
-            </div>
-          </li>
-        </ul>
+          </figure>
+        </div>
       </section>
     );
   }

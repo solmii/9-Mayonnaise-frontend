@@ -32,8 +32,8 @@ export default class SectionTwo extends Component {
     };
 
     return (
-      <>
-        <section className="laneige_bestseller">
+      <section className="bestsellerBox">
+        <div className="laneige_bestseller">
           <div className="bgBestseller" role="presentation">
             <video
               className="bgVideo"
@@ -52,8 +52,8 @@ export default class SectionTwo extends Component {
             </video>
             <p className="headerTitle">best seller</p>
           </div>
-        </section>
-        <section className="SectionMainOne">
+        </div>
+        <div className="SectionMainOne">
           <div className="MainSlider">
             <Slider {...settings}>
               <img
@@ -88,8 +88,8 @@ export default class SectionTwo extends Component {
               />
             </Slider>
           </div>
-        </section>
-      </>
+        </div>
+      </section>
     );
   }
 }

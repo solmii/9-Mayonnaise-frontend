@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ProductDetailReview.scss";
 import ProductDetailGrid from "./ProductDetailGrid";
+import ProductDetailSource from "./ProductDetailSource";
 
 export default class ProductDetailReview extends Component {
   constructor() {
@@ -50,7 +51,7 @@ export default class ProductDetailReview extends Component {
 
     return (
       <section className="pdp-review">
-        <div className="wrapper wrapper--10-over-12">
+        <div className="wrapperOver">
           <header className="pdp__sub-header">
             <em className="pdp__sub-cap">Aritaum Reviews</em>
             <h3 className="h4 pdp__sub-heading xreview_totalcount">
@@ -104,6 +105,7 @@ export default class ProductDetailReview extends Component {
           </header>
         </div>
         <ProductDetailGrid />
+        <ProductDetailSource />
       </section>
     );
   }

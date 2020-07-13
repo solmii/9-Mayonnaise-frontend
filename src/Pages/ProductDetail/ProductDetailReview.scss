@@ -1,40 +1,3 @@
-@media (min-width: 45em) {
-  .pdp__tabs {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .pdp__tabs .tab-link {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-@media (min-width: 60em) {
-  .pdp__tabs {
-    height: 54px;
-  }
-  .pdp__tabs.is-sticky {
-    top: -1px;
-  }
-  .scroll-up .pdp__tabs.is-sticky {
-    -webkit-transform: translateY(60px);
-    -ms-transform: translateY(60px);
-    transform: translateY(60px);
-  }
-  .pdp__tabs .tab-link {
-    width: 7em;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  .pdp__tabs .tab-link--active {
-    font-weight: 700;
-  }
-}
-@media (min-width: 80em) {
-  .pdp__tabs .tab-link {
-    font-size: 1.0625rem;
-  }
-}
 .pdp-review {
   background-color: #f7f7f7;
 }
@@ -51,6 +14,7 @@
   height: 500px;
   background-color: #f7f7f7;
 }
+
 .profile-content-review {
   width: 100%;
   height: 900px;
@@ -82,6 +46,7 @@
   margin-top: 35px;
 }
 .pdp__sub-header {
+  margin: 100px;
   width: 1093px;
 }
 .review-list {
@@ -332,42 +297,6 @@
   opacity: 0.3;
   background-color: transparent;
 }
-@media (min-width: 60em) {
-  .review-photos__header {
-    border-bottom: 0;
-  }
-  .review-photos__area {
-    height: calc(100% - 60px);
-  }
-  .review-photos .swiper-container {
-    height: 100%;
-  }
-  .review-photos .swiper-wrapper {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .review-photos .swiper-slide {
-    height: auto;
-  }
-  .review-photos .swiper-button-prev,
-  .review-photos .swiper-button-next {
-    top: 50%;
-    margin-top: -40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgba(247, 247, 247, 0.8);
-  }
-  .review-photos .swiper-button-prev {
-    left: -3px;
-  }
-  .review-photos .swiper-button-next {
-    right: -3px;
-  }
-  .review-photos .swiper-button-disabled {
-    background-color: transparent;
-  }
-}
 
 .review-photo {
   display: block;
@@ -454,6 +383,7 @@
 .pdp__sub-header {
   position: relative;
   max-width: 780px;
+  padding-top: 120px;
   margin: 0 auto 1.25rem;
   text-align: center;
   word-break: keep-all;
@@ -499,46 +429,8 @@
   }
 }
 
-@media (min-width: 60em) {
-  .pdp__section .bg--gray0 {
-    margin: 0;
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .pdp__section .bg--gray0 + .bg--gray0 {
-    padding-top: 0;
-  }
-  .pdp__section .bg--gray0 + .bg--gray0 .ft-hr {
-    padding-top: 70px;
-  }
-  .pdp__section--review {
-    padding: 5rem 0;
-  }
-  .pdp__sub-header {
-    max-width: 780px;
-    margin-bottom: 1.875rem;
-  }
-  .pdp__sub-cap {
-    font-size: 1rem;
-  }
-  .pdp__sub-heading {
-    margin-top: 0.2em;
-    margin-bottom: 1.875rem;
-    font-size: 1.8125rem;
-  }
-  .pdp__desc {
-    margin-top: 1.875rem;
-    margin-bottom: 2.1875rem;
-  }
-}
-
 .pdp__nav {
   height: 2.75rem;
-}
-@media (min-width: 60em) {
-  .pdp__nav {
-    height: 3.375rem;
-  }
 }
 
 .pdp__tabs {
@@ -891,13 +783,8 @@
   font-size: 12px;
   color: #62717a;
   text-shadow: 0 1px white;
-  background: #f2f2f2; /* Fallback for IE 8 */
-  background: rgba(
-    0,
-    0,
-    0,
-    0
-  ) !important; /* "transparent" doesn't work with Opera */
+  background: white; /* Fallback for IE 8 */
+
   border: 0;
   border-radius: 0;
   -webkit-appearance: none;
@@ -948,18 +835,10 @@
 }
 
 .dropdown-dark {
-  background: #444;
-  border-color: #111111 #0a0a0a black;
-  background-image: -webkit-linear-gradient(
-    top,
-    transparent,
-    rgba(0, 0, 0, 0.4)
-  );
-  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
-  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1),
-    0 1px 1px rgba(0, 0, 0, 0.2);
+  background: white;
+  border-color: white;
+  background-image: white;
+
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -973,8 +852,8 @@
 
 .dropdown-dark .dropdown-select {
   color: #aaa;
-  text-shadow: 0 1px black;
-  background: #444; /* Fallback for IE 8 */
+  text-shadow: white;
+  background: white;
 }
 
 .dropdown-dark .dropdown-select:focus {

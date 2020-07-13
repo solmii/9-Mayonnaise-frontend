@@ -5,8 +5,7 @@ import ProductDetailReview from "Pages/ProductDetail/ProductDetailReview";
 import ProductDetailCard from "Pages/ProductDetail/ProductDetailCard";
 import ProductDetailGrid from "Pages/ProductDetail/ProductDetailGrid";
 import ProductDetailSource from "Pages/ProductDetail/ProductDetailSource";
-import SectionTwo from "Pages/Main/SectionTwo";
-import Main from "Pages/Main/SectionOne";
+import Main from "Pages/Main/Main";
 
 // import Login from "Pages/ProductDetail/Login";
 // import SignUp from "Pages/ProductDetail/SignUp";
@@ -21,7 +20,7 @@ class Routes extends React.Component {
           {/* <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} /> */}
           <Route exact path="/product_detail" component={ProductDetail} />
-          <Route exact path="/section_two" component={SectionTwo} />
+          <Route exact path="/" component={Main} />
           <Route exact path="/product_review" component={ProductDetailReview} />
           <Route exact path="/product_card" component={ProductDetailCard} />
           <Route exact path="/product_grid" component={ProductDetailGrid} />
