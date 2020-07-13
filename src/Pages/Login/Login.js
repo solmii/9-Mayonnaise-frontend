@@ -21,27 +21,27 @@ const Login = () => {
 
   const handleSubmit = () => {
     if (id.length > 3 && password.length > 5) {
-      console.log("OK");
-      // fetch(`url/login`, {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     id: id,
-      //     password: password
-      //   })
+      fetch("http://10.58.6.55:8000/account/sign_in", {
+        method: "post",
+        headers: {},
+        body: JSON.stringify({
+          password: id,
+          user_id: password,
+        }),
+      })
+        .then((res) => {
+          if (res.status === 200 || res.status === 201) {
+            alert("로그인에 성공했습니다.");
+            // this.props.history.push("/");
+          }
+          return res.json();
+        })
+        .then((res) => {
+          if (res.access_token) {
+            localStorage.setItem("access_token", res.access_token);
+          }
+        });
     }
-
-    // const resStatus = loginCheck.status;
-    // const res = await loginCheck.json();
-
-    // if (resStatus === 200) {
-    //   window.localStorage.setItem("Authorization", res.Authorization);
-    //   history.push("/");
-    // } else {
-    //   SetIdError("");
-    //   SetPwdError(
-    //     "아이디, 비밀번호가 일치하지 않습니다."
-    //   );
-    // }
   };
 
   const handleEnterPress = (e) => {
@@ -112,13 +112,10 @@ const Login = () => {
               : ""}
           </WarningText>
         </div>
-        <button className="submitBtn main-font" onClick={handleSubmit}>
+        <button className="submitBtn mainFont" onClick={() => handleSubmit()}>
           로그인 하기
         </button>
         <KakaoTalkLogin />
-        {/* <button className="kakaoBtn main-font" onClick={handleKakaoSubmit}>
-          카카오톡으로 로그인 하기
-        </button> */}
       </LoginForm>
     </LoginSection>
   );
@@ -126,7 +123,6 @@ const Login = () => {
 
 export default Login;
 
-// styled-component
 const LoginSection = styled.section`
   display: flex;
   justify-content: center;

@@ -3,8 +3,25 @@ import KaKaoLogin from "react-kakao-login";
 import styled from "styled-components";
 class KakaoTalkLogin extends Component {
   responseKaKao = (kakaoUserData) => {
-    console.log(JSON.stringify(kakaoUserData));
-    // 백엔드 준비된 후에 header에 token 담아서 전달할 예정
+    fetch("http://10.58.6.55:8000/account/kakao_login", {
+      method: "post",
+      headers: {
+        Authorization: kakaoUserData.response.access_token,
+      },
+      body: {},
+    })
+      .then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          alert("카카오톡 로그인이 성공했습니다.");
+          // this.props.history.push("/");
+        }
+        return res.json();
+      })
+      .then((res) => {
+        if (res.access_token) {
+          localStorage.setItem("access_token", res.access_token);
+        }
+      });
   };
 
   responseFail = (error) => {
@@ -16,7 +33,7 @@ class KakaoTalkLogin extends Component {
       <>
         <KaKaoBtn
           jsKey={"ac589b2cbbb3df158d003bf15006995d"}
-          className="kakaoBtn main-font"
+          className="kakaoBtn mainFont"
           buttonText="카카오톡으로 로그인 하기"
           onSuccess={this.responseKaKao}
           onFailure={this.responseFail}
