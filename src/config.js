@@ -65,7 +65,7 @@ export const BOTTOM_BG =
   "https://www.laneige.com/kr/ko/assets/image/brand/refill-me-campaign/banner-model.png";
 
 // VIDEO
-//brand
+// brand-refell me
 export const REFILLME_VIDEO =
   "https://www.laneige.com/kr/ko/assets/video/refill-me-campaign/csr-hero.mp4";
 
@@ -78,3 +78,12 @@ export const REFILL_ITEM_VIDEO2 =
   "https://www.laneige.com/kr/ko/assets/video/refill-me-campaign/csr-feature-life.mp4";
 export const REFILL_ITEM_VIDEO3 =
   "https://www.laneige.com/kr/ko/assets/video/refill-me-campaign/csr-feature-eco.mp4";
+
+// OBJ
+// brand-flagship store
+export const crumb_position = {
+  0: "소개",
+  1: "서비스 소개",
+  2: "서비스 예약",
+  3: "예약확인 및 취소",
+};

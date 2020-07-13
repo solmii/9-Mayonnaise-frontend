@@ -1,0 +1,8 @@
+{
+	"reservationUser": {
+		"userName": "테스트",
+		"userPhoneNum": "01012345678",
+		"userGender": "female",
+		"userEmail": "wecoder@gmail.com"
+	}
+}

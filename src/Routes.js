@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "Pages/Login/Login";
 import SignUp from "Pages/SignUp/SignUp";
-import RefillMe from "Pages/Brand/RefillMe";
-// import ReviewModal from "Pages/ProductDetail/ModalBtn";
+import RefillMe from "Pages/Brand/RefillMe/RefillMe";
+import FlagshipStore from "Pages/Brand/FlagshipStore/FlagshipStore";
+import ReviewModal from "Pages/ProductDetail/ModalBtn";
 
 class Routes extends React.Component {
   render() {
@@ -14,7 +15,8 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/brand/refillme" component={RefillMe} />
-          {/* <Route exact path="/product_detail/test" component={ReviewModal} /> */}
+          <Route exact path="/brand/flagship_store" component={FlagshipStore} />
+          <Route exact path="/product_detail/test" component={ReviewModal} />
         </Switch>
       </Router>
     );
