@@ -12,13 +12,7 @@
     border-top: thin rgb(216, 214, 214) solid;
     border-bottom: thin rgb(216, 214, 214) solid;
 
-    .company,
-    .service,
-    .ugc,
-    .personal,
-    .beauty,
-    .sitemap,
-    .notice {
+    li {
       margin-left: 20px;
       padding-left: 25px;
       padding-right: 25px;
@@ -35,21 +29,23 @@
 
   .bottomInfo {
     display: flex;
-    margin-left: 320px;
+    margin-left: 360px;
     margin-top: 2px;
     margin-bottom: 20px;
     font-size: 14.5px;
-    .first {
-      padding-left: 40px;
-      margin-top: 10px;
-      margin-bottom: 0px;
-    }
-    .second {
-      padding-left: 15px;
-      margin-top: 10px;
-      margin-bottom: 0px;
-      .slash {
-        color: rgb(216, 214, 214);
+    p {
+      :first-child {
+        padding-left: 40px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      :second-child {
+        padding-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        span {
+          color: rgb(216, 214, 214);
+        }
       }
     }
   }
@@ -62,10 +58,8 @@
   .social {
     position: fixed;
     right: 370px;
-    bottom: 165px;
-    .facebook,
-    .insta,
-    .youtube {
+    bottom: 155px;
+    img {
       padding-left: 20px;
     }
   }
@@ -76,20 +70,3 @@
     height: 55px;
   }
 }
-
-/*display: 순서
-      flex-direction:
-      justify-content:
-      align-items:
-      position:
-      top:
-      left:
-      width:
-      height:
-      margin:
-      padding:
-      border:
-      font-family: 돋움, Dotum, sans-seri
-      font-size:
-      color:
-      background-color:*/

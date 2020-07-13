@@ -15,6 +15,11 @@ class Nav extends React.Component {
     };
   }
 
+  // handleDropDown = (e) => {
+  //   const { name, value } = e.target;
+  //   this.setState({ [name]: ![value] });
+  // };
+
   handleBrandDropDown = () => {
     this.setState({ dropdownbrand: !this.state.dropdownbrand });
   };
@@ -40,16 +45,25 @@ class Nav extends React.Component {
   };
 
   render() {
+    const {
+      dropdownbrand,
+      dropdownbest,
+      dropdownskin,
+      dropdownmakeup,
+      dropdownhomme,
+      dropdownevent,
+    } = this.state;
+
     return (
       <div className="Nav">
         <div
           className={
-            this.state.dropdownbrand ||
-            this.state.dropdownbest ||
-            this.state.dropdownskin ||
-            this.state.dropdownmakeup ||
-            this.state.dropdownhomme ||
-            this.state.dropdownevent
+            dropdownbrand ||
+            dropdownbest ||
+            dropdownskin ||
+            dropdownmakeup ||
+            dropdownhomme ||
+            dropdownevent
               ? "overlay activate"
               : "overlay"
           }
@@ -63,31 +77,28 @@ class Nav extends React.Component {
           </div>
           <div className="iconsection">
             <div className="icons">
-              <img className="icon0" src={CART} alt="Laneige" />
-              <img className="icon1" src={USER} alt="Laneige" />
-              <img className="icon2" src={PIN} alt="Laneige" />
-              <img className="icon3" src={SEARCH} alt="Laneige" />
+              <img src={CART} alt="Laneige" />
+              <img src={USER} alt="Laneige" />
+              <img src={PIN} alt="Laneige" />
+              <img src={SEARCH} alt="Laneige" />
             </div>
           </div>
           <ul className="navBar">
             <li
               className="brand"
-              onMouseEnter={this.handleBrandDropDown}
-              onMouseLeave={this.handleBrandDropDown}
+              name="dropdownbrand"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>브랜드</span>
               <div className="brandUnderBar">
                 <div
-                  className={
-                    this.state.dropdownbrand ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownbrand ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
               <div
                 className={
-                  this.state.dropdownbrand
-                    ? "brandDropDown show"
-                    : "brandDropDown hide"
+                  dropdownbrand ? "brandDropDown show" : "brandDropDown hide"
                 }
               >
                 <ul className="brandSubSections">
@@ -99,22 +110,19 @@ class Nav extends React.Component {
             </li>
             <li
               className="best"
-              onMouseEnter={this.handleBestDropDown}
-              onMouseLeave={this.handleBestDropDown}
+              name="dropdownbest"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>베스트 & 신상품</span>
               <div className="bestUnderBar">
                 <div
-                  className={
-                    this.state.dropdownbest ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownbest ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
               <div
                 className={
-                  this.state.dropdownbest
-                    ? "brandDropDown show"
-                    : "brandDropDown hide"
+                  dropdownbest ? "brandDropDown show" : "brandDropDown hide"
                 }
               >
                 <ul className="bestSubSections">
@@ -126,22 +134,19 @@ class Nav extends React.Component {
             </li>
             <li
               className="skinCare"
-              onMouseEnter={this.handleSkinDropDown}
-              onMouseLeave={this.handleSkinDropDown}
+              name="dropdownskin"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>스킨케어</span>
               <div className="skinUnderBar">
                 <div
-                  className={
-                    this.state.dropdownskin ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownskin ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
               <div
                 className={
-                  this.state.dropdownskin
-                    ? "skinDropDown show"
-                    : "skinDropDown hide"
+                  dropdownskin ? "skinDropDown show" : "skinDropDown hide"
                 }
               >
                 <div className="wholeColumn">
@@ -203,22 +208,19 @@ class Nav extends React.Component {
             </li>
             <li
               className="makeUp"
-              onMouseEnter={this.handleMakeUpDropDown}
-              onMouseLeave={this.handleMakeUpDropDown}
+              name="dropdownmakeup"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>메이크업</span>
               <div className="makeUpUnderBar">
                 <div
-                  className={
-                    this.state.dropdownmakeup ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownmakeup ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
               <div
                 className={
-                  this.state.dropdownmakeup
-                    ? "makeUpDropDown show"
-                    : "makeUpDropDown hide"
+                  dropdownmakeup ? "makeUpDropDown show" : "makeUpDropDown hide"
                 }
               >
                 <div className="wholeColumn">
@@ -263,22 +265,19 @@ class Nav extends React.Component {
             </li>
             <li
               className="homme"
-              onMouseEnter={this.handleHommeDropDown}
-              onMouseLeave={this.handleHommeDropDown}
+              name="dropdownhomme"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>옴므</span>
               <div className="hommeUnderBar">
                 <div
-                  className={
-                    this.state.dropdownhomme ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownhomme ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
               <div
                 className={
-                  this.state.dropdownhomme
-                    ? "hommeDropDown show"
-                    : "hommeDropDown hide"
+                  dropdownhomme ? "hommeDropDown show" : "hommeDropDown hide"
                 }
               >
                 <div className="wholeColumn">
@@ -331,15 +330,14 @@ class Nav extends React.Component {
             </li>
             <li
               className="event"
-              onMouseEnter={this.handleEventDropDown}
-              onMouseLeave={this.handleEventDropDown}
+              name="dropdownevent"
+              onMouseEnter={this.handleDropDown}
+              onMouseLeave={this.handleDropDown}
             >
               <span>이벤트</span>
               <div className="eventUnderBar">
                 <div
-                  className={
-                    this.state.dropdownevent ? "blackBar active" : "blackBar"
-                  }
+                  className={dropdownevent ? "blackBar active" : "blackBar"}
                 ></div>
               </div>
             </li>

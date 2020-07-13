@@ -32,11 +32,7 @@
         &:hover {
           cursor: pointer;
         }
-        .icon0,
-        .icon1,
-        .icon2,
-        .icon2,
-        .icon3 {
+        img {
           width: 24px;
           margin-left: 20px;
         }
@@ -164,7 +160,6 @@
         width: 100%;
         height: 500px;
         background-color: rgb(245, 245, 245);
-        // background-color: rgba(230, 230, 230, 0.308);
         border-top: rgba(199, 198, 198, 0.308) solid thin;
         border-bottom: rgba(199, 198, 198, 0.308) solid thin;
       }
@@ -248,20 +243,3 @@
     }
   }
 }
-
-/*display: 순서
-    flex-direction:
-    justify-content:
-    align-items:
-    position:
-    top:
-    left:
-    width:
-    height:
-    margin:
-    padding:
-    border:
-    font-family: 돋움, Dotum, sans-seri
-    font-size:
-    color:
-    background-color:*/
