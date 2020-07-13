@@ -14,8 +14,8 @@ class SkinCare extends Component {
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
   }
+
   render() {
-    console.log(this.state.products);
     return (
       <div className="SkinCare">
         <div className="headerContainer">
@@ -28,16 +28,17 @@ class SkinCare extends Component {
         <div className="filterCategoryWrapper">
           <div className="categoryBox">
             <div className="letterCategory">카테고리</div>
-            <div className="openCategory1">+</div>
+            <div className="plusSign">+</div>
           </div>
           <div className="categoryBox">
             <div className="letterCategory">가격순</div>
-            <div className="openCategory2">∨</div>
+            <div className="closeSign">v</div>
           </div>
         </div>
         <div className="numberOfProducts">
           스킨케어 {this.state.products.length}개 상품
         </div>
+        <div className="categoryBoxIsOpened hide"></div>
         <div className="mainContentsWhole">
           <div className="subBox">
             {this.state.products.map((element) => {
