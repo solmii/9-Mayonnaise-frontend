@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./SkinCare.scss";
-
 class SkinCare extends Component {
   constructor() {
     super();
