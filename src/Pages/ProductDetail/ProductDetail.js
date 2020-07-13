@@ -3,42 +3,40 @@ import ProductDetailReview from "./ProductDetailReview";
 import "./ProductDetail.scss";
 
 export default class ProductDetail extends Component {
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
 
-  //   this.state = {
-  //     productData: {},
-  //     productImg: [],
-  //     htmlBody: [],
-  //     hashtag: [],
-  //     productName: [],
-  //     productSubName: [],
-  //     productComment: [],
-  //     productVolume: [],
-  //     productPrice: [],
-  //     clickHandlerId: "",
-  //     subId: 0,
-  //     subIdNum: 0,
-  //     reviewArr: [],
-  //   };
-  // }
+    this.state = {
+      productData: {},
+      productImg: [],
+      htmlBody: [],
+      hashtag: [],
+      productName: [],
+      productSubName: [],
+      productComment: [],
+      productVolume: [],
+      productPrice: [],
+      clickHandlerId: "",
+      subId: 0,
+      subIdNum: 0,
+      reviewArr: [],
+      product_detail: [],
+    };
+  }
 
   // componentDidMount() {
-  //   fetch("http://10.58.4.35:8000/product/detail?product_id=1")
+  //   fetch("http://10.58.7.35:8000/product/detail?product_id=1")
   //     .then((res) => res.json())
   //     .then((res) => console.log(res));
   // }
   // htmlBody data 받아오기
-  // componentDidMount() {
-  //   // const id = this.props.match.params.pid;
-  //   fetch("http://10.58.4.35:8000/product/detail?product_id=1")
-  //     .then((res) => res.json())
-  //     .then((res) =>
-  //       this.setState({
-  //         product_feature: res,
-  //       })
-  //     );
-  // }
+  componentDidMount() {
+    // const id = this.props.match.params.pid;
+    fetch("http://10.58.7.99:8000/product/detail?product_id=1")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+    // .then((res) => this.setState({ htmlBody: res.item.product_feature }));
+  }
   // htmlBody: res,
   // [this.state.htmlBody[0].product_name]; //백엔드로부터 받아오는 html.body의 첫번째는 프로덕트 네임이다
 
@@ -75,9 +73,9 @@ export default class ProductDetail extends Component {
   // };this.state.htmlBody
 
   render() {
-    // console.log(this.state.product_feature);
+    console.log("dddddd: ", this.state.htmlBody);
     // const { htmlBody } = this.state;
-    // const { Description, Teaser, Stage } = this.state.htmlBody;
+    const { htmlBody } = this.state.htmlBody;
     // const htmlCode = this.state.htmlBody.length !== 0 && Description;
     // const teaser = this.state.htmlBody.length !== 0 && Teaser;
     // const stage = this.state.htmlBody.length !== 0 && Stage;
@@ -112,13 +110,13 @@ export default class ProductDetail extends Component {
             <div className="headerContainer">
               <div className="headerInfoContainer">
                 <div className="productInfoSub">
-                  {/* <p className="subName">
-                    {this.state.htmlBody.length !== 0 && //메인사진 옆에 클릭되는 사진
-                      this.state.htmlBody.sub[this.state.subIdNum]}
-                  </p> */}
+                  <p className="subName">
+                    {/* {this.state.htmlBody.length !== 0 && //메인사진 옆에 클릭되는 사진
+                      this.state.htmlBody.sub[this.state.subIdNum]} */}
+                  </p>
                   <div className="subImgContainer">
                     <img
-                      // onClick={() => this.clickHandler(0)}
+                      onClick={() => this.clickHandler(0)}
                       className="subImg"
                       // src={
                       //   this.state.htmlBody.length !== 0 &&
@@ -127,7 +125,7 @@ export default class ProductDetail extends Component {
                       alt=""
                     />
                     <img
-                      // onClick={() => this.clickHandler(1)}
+                      onClick={() => this.clickHandler(1)}
                       className="subImg"
                       // src={
                       //   this.state.htmlBody.length !== 0 &&
@@ -269,7 +267,7 @@ export default class ProductDetail extends Component {
             </div>
           </section>
           <article>
-            {/* <div dangerouslySetInnerHTML={{ __html: htmlBody }}></div> */}
+            <div dangerouslySetInnerHTML={{ __html: htmlBody }}></div>
             {/* <div dangerouslySetInnerHTML={{ __html: htmlCode }}></div>
             <div dangerouslySetInnerHTML={{ __html: stage }}></div> */}
           </article>
