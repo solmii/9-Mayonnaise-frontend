@@ -1,0 +1,31 @@
+{
+	"cartDate": [
+		{
+			"productNum": 3,
+			"productKoName": "에센셜 밸런싱 에멀젼 라이트",
+			"productEnName": "ESSENTIAL BALANCING EMULSION LIGHT",
+			"productImg": "https://www.laneige.com/kr/ko/skincare/__icsFiles/afieldfile/2020/04/06/essential-balancing-emulsion-light-thumb-03.png",
+			"productVolumn": "120ml",
+			"productPrice": 20000,
+			"productQuantity": 1
+		},
+		{
+			"productNum": 6,
+			"productKoName": "크림 스킨 퀵 스킨 팩",
+			"productEnName": "CREAM SKIN QUICK SKIN PACK",
+			"productImg": "https://www.laneige.com/kr/ko/skincare/__icsFiles/afieldfile/2020/01/22/cream-skin-quick-skin-pack-01_01_w_1.png",
+			"productVolumn": "100매 / 140ml",
+			"productPrice": 30000,
+			"productQuantity": 1
+		},
+		{
+			"productNum": 2,
+			"productKoName": "립 글로이 밤",
+			"productEnName": "LIP GLOWY BALM",
+			"productImg": "https://www.laneige.com/kr/ko/skincare/__icsFiles/afieldfile/2019/11/17/Lip_Glowy_Balm_thumb_04-1_2.png",
+			"productVolumn": "10g",
+			"productPrice": 10000,
+			"productQuantity": 1
+		}
+	]
+}

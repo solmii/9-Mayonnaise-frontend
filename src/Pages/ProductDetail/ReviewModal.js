@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios, * as others from "axios";
 import styled from "styled-components";
 import Rating from "react-rating";
-import { ARROW_ICON, STAR_EMPTY, STAR_FILL } from "config";
+import { STAR_EMPTY, STAR_FILL } from "config";
 
 const ReviewModal = () => {
   const [reviewImg, setReviewImg] = useState({
@@ -12,12 +12,12 @@ const ReviewModal = () => {
   const { reviewImgURL, previewImgURL } = reviewImg;
 
   const [reviewInfo, setReviewInfo] = useState({
-    productNum: "",
+    productNum: 1,
     skinType: "모든피부",
     rating: 5,
     reviewContent: "",
   });
-  const { rating } = reviewInfo;
+  const { productNum, skinType, rating, reviewContent } = reviewInfo;
 
   const handleUploadReviewImg = (e) => {
     let reader = new FileReader();
@@ -50,19 +50,24 @@ const ReviewModal = () => {
 
   const handleReviewSubmit = () => {
     const formData = new FormData();
-    formData.append("file", reviewImgURL);
-    formData.append("filename", reviewImgURL.name);
+    formData.append("review_image", reviewImgURL);
+    formData.append("product_id", productNum);
+    formData.append("skin_type_id", skinType);
+    formData.append("comment", reviewContent);
+    formData.append("rate", rating);
 
-    return (
-      axios
-        // .post("api 주소", formData) => 백엔드 준비되면 맞춰볼 예정
-        .then((res) => {
-          console.log(reviewInfo, formData);
-        })
-        .catch((err) => {
-          alert("실패");
-        })
-    );
+    fetch("http://10.58.4.134:8000/review/", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.y42DGv-P8a3Toi_utiZPR4iX_HyxwrtCjCulT5ewtnQ",
+      },
+      body: formData,
+    })
+      .then(alert("리뷰가 작성되었습니다!"))
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
