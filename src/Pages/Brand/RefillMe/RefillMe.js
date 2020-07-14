@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import CampaignSlider from "./CampaignSlider";
-import CampaignHistory from "./CompaignHistory";
+import CampaignHistory from "./CampaignHistory";
 import styled from "styled-components";
 import {
   REFILLME_VIDEO,

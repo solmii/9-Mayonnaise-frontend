@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import { HistoryData } from "./HistoryData";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ const CampaignHistory = () => {
   };
 
   return (
-    <SilderForm>
+    <HistorySilderForm>
       <Slider {...settings}>
         {HistoryData.map((data) => (
           <article>
@@ -26,23 +26,36 @@ const CampaignHistory = () => {
           </article>
         ))}
       </Slider>
-    </SilderForm>
+    </HistorySilderForm>
   );
 };
 
 export default CampaignHistory;
 
-const SilderForm = styled.section`
+const HistorySilderForm = styled.section`
   width: 100vw;
+
+  /* .slick-slide {
+    max-width: 1000px;
+  } */
+
+  .slick-list {
+    top: 0;
+    left: 13%;
+    padding-left: 14%;
+    width: 100%;
+    overflow: visible;
+  }
 
   article {
     position: relative;
+    margin: 0 auto;
     outline: none;
 
     .descForm {
       position: absolute;
       top: 16%;
-      left: 22%;
+      left: -15%;
       max-width: 320px;
 
       h1 {
