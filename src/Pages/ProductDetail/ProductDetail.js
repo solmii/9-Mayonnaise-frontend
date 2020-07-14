@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ModalBtn from "./ModalBtn";
 import ProductDetailReview from "./ProductDetailReview";
 import "./ProductDetail.scss";
 import "./ProductDetailData.scss";
@@ -15,35 +14,24 @@ export default class ProductDetail extends Component {
 
   // 장바구니 버튼 클릭시 상품 정보 POST로 서버에 전송
   addCartHandler = () => {
-    fetch("http://10.58.5.123:8001/cart", {
+    fetch("http://10.58.1.117:8000/order/cart", {
       method: "post",
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization: localStorage.getItem("access_token"),
       },
       body: JSON.stringify({
-        productNum: this.state.productNum,
-        currentSize: this.state.currentSize,
-        currentOrigin: this.state.currentOrigin,
-        currentSale: this.state.currentSale,
-        currentQuantity: this.state.currentQuantity,
+        product: this.state.productDetail.product_id,
+        quantity: 1,
       }),
-    })
-      .then((res) => res.json()) // 제이슨 바디로 온다...
-      .then((res) => {
-        if (res.token) {
-          //토큰이름은 종헌님이랑 같이 상의
-          localStorage.setItem("access_token", res.token); //access_token이름은 내가 정하는거 res.token은 그 토큰 종헌님한테 오는거 긴 토큰 이름임..
-          this.props.history.push("cart");
-        }
-      })
-      .then((res) => console.log(res)); //그냥 콘솔에 뿌리고 끝 리턴 안함
+    }).then((res) => console.log(res));
   };
+
   clickHandler(idx) {
     this.setState({ colorIdNum: idx });
   }
 
   componentDidMount() {
-    fetch(`http://10.58.3.235:8000/product/${this.props.match.params.id}`)
+    fetch(`http://10.58.1.117:8000/product/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ productDetail: res.item }));
   }
@@ -142,7 +130,9 @@ export default class ProductDetail extends Component {
                       </div>
 
                       <div className="btnContainer">
-                        <div className="buyBtn">장바구니</div>
+                        <div className="buyBtn" onClick={this.addCartHandler}>
+                          장바구니
+                        </div>
                         {/* <div className="car tBtn" onClick={this.cartHandler}>
                         <img className="cartImg" src={CartImg} alt="" /> */}
                         <div className="btnContainer">

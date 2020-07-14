@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
-import CampaignSlider from "./CampaignSlider";
-import CampaignHistory from "./CompaignHistory";
+import { Link } from "react-scroll";
 import styled from "styled-components";
+import SlotCount from "./SlotCount";
+import CampaignSlider from "./CampaignSlider";
+import CampaignHistory from "./CampaignHistory";
 import {
   REFILLME_VIDEO,
   REFILLME_BG,
@@ -37,25 +38,37 @@ const RefillMe = () => {
   const [waterBtn, setwaterBtn] = useState(false);
   const [lifeBtn, setlifeBtn] = useState(false);
   const [ecoBtn, setecoBtn] = useState(false);
-  // const [bgOpacity, setbgOpacity] = useState(0); opacity event 구현 예정
+  const [bgOpacity, setbgOpacity] = useState(0);
+  const [showSlot, setShowSlot] = useState(0);
+
+  const videoSetting = {
+    autoPlay: true,
+    muted: true,
+    playsInline: true,
+  };
 
   const handleScroll = () => {
     const scroll = window.scrollY;
+
     if (scroll > 5) {
       setShowVideo(false);
     } else {
       setShowVideo(true);
     }
 
-    if (scroll < 2150 && scroll > 1550) {
+    if (scroll > 600) {
+      setShowSlot(1);
+    }
+
+    if (scroll < 2000 && scroll > 1500) {
       setwaterBtn(true);
       setlifeBtn(false);
       setecoBtn(false);
-    } else if (scroll < 2800 && scroll > 2150) {
+    } else if (scroll < 2600 && scroll > 2000) {
       setwaterBtn(false);
       setlifeBtn(true);
       setecoBtn(false);
-    } else if (scroll < 3400 && scroll > 2800) {
+    } else if (scroll < 3200 && scroll > 2600) {
       setwaterBtn(false);
       setlifeBtn(false);
       setecoBtn(true);
@@ -64,12 +77,18 @@ const RefillMe = () => {
       setlifeBtn(false);
       setecoBtn(false);
     }
+
+    if (scroll > 100 && scroll <= 1500) {
+      setbgOpacity(scroll / 1500);
+    } else if (scroll > 1500 && scroll < 3000) {
+      setbgOpacity(2 - scroll / 1500);
+    } else {
+      setbgOpacity(0);
+    }
   };
 
   return (
-    <>
-      {/* <Section bgOpacity={bgOpacity}> opacity event 구현 예정 */}
-      <Nav />
+    <Section bgOpacity={bgOpacity}>
       <RefillMeVideo videoPlay={showVideo}>
         <div className="refillMeVideoForm">
           <div className="refillMeVideoTitle">
@@ -84,14 +103,7 @@ const RefillMe = () => {
             <span className="scrollLine" />
             <p>SCROLL</p>
           </div>
-          {showVideo && (
-            <video
-              src={REFILLME_VIDEO}
-              autoplay="autoplay"
-              muted="muted"
-              playsinline="playsinline"
-            />
-          )}
+          {showVideo && <video src={REFILLME_VIDEO} {...videoSetting} />}
         </div>
 
         <div className="refillMeImgForm">
@@ -119,13 +131,13 @@ const RefillMe = () => {
           <img alt="refill_me_background" src={REFILLME_BG} />
         </div>
       </RefillMeVideo>
-      <SlotCount>
-        <h1 className="numFont">352,000,000</h1>
+      <SlotCountForm>
+        <SlotCount showSlot={showSlot} />
         <p>
           2010년부터 지금까지 라네즈가
           <br />물 보호 활동에 후원한 금액
         </p>
-      </SlotCount>
+      </SlotCountForm>
       <RefillItem>
         <nav>
           <ul>
@@ -174,9 +186,9 @@ const RefillMe = () => {
             <video
               src={REFILL_ITEM_VIDEO1}
               loop="loop"
-              autoplay="autoplay"
+              autoPlay="autoplay"
               muted="muted"
-              playsinline="playsinline"
+              playsInline="playsinline"
             />
             <p>‘리필 미 보틀’을 사용해 몸 속에 수분을 가득 채워</p>
             <strong>나를 리필!</strong>
@@ -186,9 +198,9 @@ const RefillMe = () => {
             <video
               src={REFILL_ITEM_VIDEO2}
               loop="loop"
-              autoplay="autoplay"
+              autoPlay="autoplay"
               muted="muted"
-              playsinline="playsinline"
+              playsInline="playsinline"
             />
             <p>일상 속 트렌디한 보틀과 함께 하며</p>
             <strong>삶을 리필!</strong>
@@ -202,9 +214,9 @@ const RefillMe = () => {
             <video
               src={REFILL_ITEM_VIDEO3}
               loop="loop"
-              autoplay="autoplay"
+              autoPlay="autoplay"
               muted="muted"
-              playsinline="playsinline"
+              playsInline="playsinline"
             />
             <p>
               친환경 다회성 보틀을 사용하고, 일회용 플라스틱 사용 절감에
@@ -282,8 +294,8 @@ const RefillMe = () => {
           <img alt="let's_together" src={TOGETHER_IMG4} />
         </div>
         <div className="tag">
-          <a href="">#리필미캠페인</a>
-          <a href="">#RefillMe</a>
+          <p>#리필미캠페인</p>
+          <p>#RefillMe</p>
         </div>
         <div className="textForm">
           <p>
@@ -308,27 +320,18 @@ const RefillMe = () => {
           </strong>
         </div>
       </Bottom>
-    </>
+    </Section>
   );
 };
 
 export default RefillMe;
 
-// const Section = styled.section`
-//   background: linear-gradient(
-//     to right bottom,
-//     rgba(121, 163, 220, ${(props) => props.bgOpacity}),
-//     white
-//   );
-// `;  opacity event 구현 예정
-
-// 테스트용! 팀원 Nav bar merge 되면 pull 받고 지울 것.
-const Nav = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 60px;
-  z-index: 200;
-  background-color: white;
+const Section = styled.section`
+  background: linear-gradient(
+    to right bottom,
+    rgba(121, 163, 220, ${(props) => props.bgOpacity}),
+    white
+  );
 `;
 
 const RefillMeVideo = styled.article`
@@ -457,16 +460,8 @@ const RefillMeVideo = styled.article`
   }
 `;
 
-const SlotCount = styled.article`
-  margin: 200px 0;
-
-  h1 {
-    margin-bottom: 60px;
-    font-size: 100px;
-    text-align: center;
-    letter-spacing: 4px;
-    color: #4477be;
-  }
+const SlotCountForm = styled.article`
+  margin: 150px 0;
 
   p {
     font-size: 18px;
@@ -549,7 +544,7 @@ const Campaign = styled.div`
   margin-top: 20px;
 
   img {
-    width: 230px;
+    width: 184px;
   }
 
   p {
@@ -634,10 +629,12 @@ const Together = styled.article`
     }
   }
 
-  .tag a {
+  .tag p {
+    display: inline;
     padding-right: 5px;
     font-size: 16px;
     color: #767676;
+    cursor: pointer;
   }
 
   .textForm {

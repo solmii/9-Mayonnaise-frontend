@@ -1,23 +1,36 @@
 import React, { useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 import Rating from "react-rating";
-import { STAR_EMPTY, STAR_FILL } from "config";
+import { REVIEW_API, STAR_EMPTY, STAR_FILL } from "config";
 
 const ReviewModal = () => {
   const [reviewImg, setReviewImg] = useState({
-    reviewImgURL: "",
+    reviewImgURL: null,
+    reviewImgNameURL: null,
     previewImgURL: "",
   });
-  const { reviewImgURL, previewImgURL } = reviewImg;
+
+  const { reviewImgURL, reviewImgNameURL, previewImgURL } = reviewImg;
 
   const [reviewInfo, setReviewInfo] = useState({
-    productNum: "",
+    productNum: 1,
     skinType: "모든피부",
     rating: 5,
     reviewContent: "",
   });
-  const { rating } = reviewInfo;
+
+  const { productNum, skinType, rating, reviewContent } = reviewInfo;
+
+  const skinTypeArr = [
+    "민감성",
+    "건성",
+    "지성",
+    "중성",
+    "복합성",
+    "모든피부",
+    "악건성",
+    "트러블성",
+  ];
 
   const handleUploadReviewImg = (e) => {
     let reader = new FileReader();
@@ -26,6 +39,7 @@ const ReviewModal = () => {
     reader.onloadend = () => {
       setReviewImg({
         reviewImgURL: file,
+        reviewImgNameURL: file.name,
         previewImgURL: reader.result,
       });
     };
@@ -50,19 +64,24 @@ const ReviewModal = () => {
 
   const handleReviewSubmit = () => {
     const formData = new FormData();
-    formData.append("file", reviewImgURL);
-    formData.append("filename", reviewImgURL.name);
+    formData.append("review_image", reviewImgURL);
+    formData.append("filename", reviewImgNameURL);
+    formData.append("product_id", productNum);
+    formData.append("skin_type_id", skinType);
+    formData.append("comment", reviewContent);
+    formData.append("rate", rating);
 
-    return (
-      axios
-        // .post("api 주소", formData) => 백엔드 준비되면 맞춰볼 예정
-        .then((res) => {
-          console.log(reviewInfo, formData);
-        })
-        .catch((err) => {
-          alert("실패");
-        })
-    );
+    fetch(`${REVIEW_API}`, {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
+      body: formData,
+    })
+      .then(alert("리뷰가 작성되었습니다!"))
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
@@ -106,30 +125,11 @@ const ReviewModal = () => {
               </th>
               <td>
                 <SelectBox onChange={handleReviewInfo}>
-                  <option name="skinType" vlaue="민감성">
-                    민감성
-                  </option>
-                  <option name="skinType" vlaue="건성">
-                    건성
-                  </option>
-                  <option name="skinType" vlaue="지성">
-                    지성
-                  </option>
-                  <option name="skinType" vlaue="중성">
-                    중성
-                  </option>
-                  <option name="skinType" vlaue="복합성">
-                    복합성
-                  </option>
-                  <option name="skinType" vlaue="모든피부">
-                    모든피부
-                  </option>
-                  <option name="skinType" vlaue="악건성">
-                    악건성
-                  </option>
-                  <option name="skinType" vlaue="트러블성">
-                    트러블성
-                  </option>
+                  {skinTypeArr.map((skinType, idx) => (
+                    <option name="skinType" value={skinType} key={idx}>
+                      {skinType}
+                    </option>
+                  ))}
                 </SelectBox>
               </td>
             </tr>

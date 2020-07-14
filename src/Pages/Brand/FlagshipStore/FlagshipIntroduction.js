@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 
 const FlagshipIntroduction = () => {
   return <div>FlagshipIntroduction page</div>;

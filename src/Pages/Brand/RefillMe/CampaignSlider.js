@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 
 const CampaignSlider = () => {
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -14,7 +15,7 @@ const CampaignSlider = () => {
   };
 
   return (
-    <SilderForm>
+    <CampaignSilderForm>
       <div className="sliderCorner" />
       <Slider {...settings}>
         <article>
@@ -39,16 +40,16 @@ const CampaignSlider = () => {
           </p>
         </article>
       </Slider>
-    </SilderForm>
+    </CampaignSilderForm>
   );
 };
 
 export default CampaignSlider;
 
-const SilderForm = styled.section`
+const CampaignSilderForm = styled.section`
   position: relative;
   max-width: 780px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 60px 70px 55px;
   border: 5px solid #e8e9e9;
   text-align: center;
@@ -63,6 +64,16 @@ const SilderForm = styled.section`
     border-left: 21px solid #e8e9e9;
     border-right: 21px solid #fff;
     border-bottom: 21px solid #fff;
+  }
+
+  .slick-slider {
+    height: 120px;
+  }
+
+  .slick-list {
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   article {

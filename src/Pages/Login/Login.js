@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import KakaoTalkLogin from "./KakaoTalkLogin";
 import styled from "styled-components";
-import { LOGIN_BG_LG, WARNING_ICON } from "config";
+import { SIGN_API, LOGIN_BG_LG, WARNING_ICON } from "config";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
     id: "",
     password: "",
   });
+
   const { id, password } = loginData;
 
   const handelChangeInput = (e) => {
@@ -21,18 +23,17 @@ const Login = () => {
 
   const handleSubmit = () => {
     if (id.length > 3 && password.length > 5) {
-      fetch("http://10.58.6.55:8000/account/sign_in", {
+      fetch(`${SIGN_API}/sign-in`, {
         method: "post",
         headers: {},
         body: JSON.stringify({
           password: id,
-          user_id: password,
+          user_email: password,
         }),
       })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {
             alert("로그인에 성공했습니다.");
-            // this.props.history.push("/");
           }
           return res.json();
         })
@@ -121,7 +122,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withRouter(Login);
 
 const LoginSection = styled.section`
   display: flex;
