@@ -5,8 +5,8 @@ export default class ProductDetailSource extends Component {
     super();
     this.state = {
       moreBtn: false,
-      htmlBody: [],
-      product_ingredient:[],
+      htmlBody: {},
+      product_ingredient: [],
     };
   }
 
@@ -18,8 +18,6 @@ export default class ProductDetailSource extends Component {
   };
 
   render() {
-    const { htmlBody } = this.state;
-    // const { sourceCode } = this.props;
     return (
       <body>
         <nav class="accordion arrows">
@@ -54,24 +52,20 @@ export default class ProductDetailSource extends Component {
             </label>
             <label class="box-close" for="acc-close"></label>
             <div class="box-content">
-            <p className="name">
-                      
-             {this.state.htmlBody.product_ingredient}
-                    </p>
+              <p className="name">{this.state.htmlBody.product_ingredient}</p>
               정제수, 프로판다이올, 1,2-헥산다이올,
               피피지-13-데실테트라데세스-24, 부틸렌글라이콜, 에틸헥실글리세린,
-              나이아신아마이드, 향료, 다이소
-              
-              듐이디 티에이, 마그네슘설페이트, 칼슘클로라이드, 에칠아스코빌에텔,
-              코튼추출물, 부틸페닐메틸프로피오날, 리모넨, 망가니즈설페이트,
-              시트로
-            
-              넬올, 퀴노아씨 추출물, 징크설페이트, 토코페롤,
-              아스코빌글루코사이드, 마그네슘설페이트, 망가니즈설페이트, 칼슘클로라이드, 포타슘알지네이트, 암모늄아크릴로일디메칠타우레이트/브이피코폴리머, 폴리소르베이트20, 디메치콘, 디메치콘올, 디메치콘/비닐디메치콘크로스폴리머, 프로판디올, 에칠헥실글리세린
+              나이아신아마이드, 향료, 다이소 듐이디 티에이, 마그네슘설페이트,
+              칼슘클로라이드, 에칠아스코빌에텔, 코튼추출물,
+              부틸페닐메틸프로피오날, 리모넨, 망가니즈설페이트, 시트로 넬올,
+              퀴노아씨 추출물, 징크설페이트, 토코페롤, 아스코빌글루코사이드,
+              마그네슘설페이트, 망가니즈설페이트, 칼슘클로라이드,
+              포타슘알지네이트, 암모늄아크릴로일디메칠타우레이트/브이피코폴리머,
+              폴리소르베이트20, 디메치콘, 디메치콘올,
+              디메치콘/비닐디메치콘크로스폴리머, 프로판디올, 에칠헥실글리세린
             </div>
           </section>
           <input type="radio" name="accordion" id="cb3" />
-
           <input type="radio" name="accordion" id="acc-close" />
         </nav>
       </body>

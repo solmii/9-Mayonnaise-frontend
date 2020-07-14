@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
+import {
+  getReservationInfo,
+  postReservationInfo,
+  fetchReservationConfirmInfo,
+} from "./ReservationFetchFunction";
+import { RESERVATION_API } from "config";
 import styled from "styled-components";
 
 const FlagshipReservation = () => {
   const [uploadReservationData, setUploadReservationData] = useState(false);
 
   const [reservationInfo, setReservationInfo] = useState({
-    reservationStore: "명동점",
-    reservationDate: "2020-07-14",
-    reservationTime: "10:30 AM",
     userName: "",
     userPhoneNum: "",
     userGender: "",
-    userAge: "15~19세",
   });
 
   const {
@@ -21,12 +23,60 @@ const FlagshipReservation = () => {
     userName,
     userPhoneNum,
     userGender,
+    userAge,
   } = reservationInfo;
 
+  const [reservationNum, setReservationNum] = useState("");
+
+  const ageArr = [
+    "15~19세",
+    "20~24세",
+    "25~29세",
+    "30~34세",
+    "35~39세",
+    "40~44세",
+    "45~49세",
+    "50~54세",
+    "55세 이상",
+  ];
+
+  // const fetchReservationInfo = () => {
+  //   fetch(`${RESERVATION_API}`, {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: localStorage.getItem("access_token"),
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) =>
+  //       setReservationInfo({
+  //         reservationStore: "라네즈 플래그십 스토어 명동점",
+  //         reservationDate: "2020-07-14",
+  //         reservationTime: "10:30 AM",
+  //         userName: res.user_info.user_name,
+  //         userPhoneNum: res.user_info.user_phone_number,
+  //         userGender: res.user_info.user_gender,
+  //         userAge: "15~19세",
+  //       })
+  //     );
+  // };
+
+  // useEffect(() => {
+  //   fetchReservationInfo();
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:3000/data/reservationData.json")
-      .then((res) => res.json())
-      .then((res) => setReservationInfo(res.reservationUser));
+    getReservationInfo("GET").then((res) =>
+      setReservationInfo({
+        reservationStore: "라네즈 플래그십 스토어 명동점",
+        reservationDate: "2020-07-14",
+        reservationTime: "10:30 AM",
+        userName: res.user_info.user_name,
+        userPhoneNum: res.user_info.user_phone_number,
+        userGender: res.user_info.user_gender,
+        userAge: "15~19세",
+      })
+    );
   }, []);
 
   const handleReservationInfo = (e) => {
@@ -37,17 +87,64 @@ const FlagshipReservation = () => {
     });
   };
 
+  // const getReservationNum = () => {
+  //   fetch(`${RESERVATION_API}/check`, {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: localStorage.getItem("access_token"),
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) =>
+  //       setReservationNum(
+  //         res.reservation_list[res.reservation_list.length - 1].reservation_no
+  //       )
+  //     );
+  // };
+
+  // const handleReviewSubmit = () => {
+  //   fetch(`${RESERVATION_API}`, {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: localStorage.getItem("access_token"),
+  //     },
+  //     body: JSON.stringify({
+  //       store: reservationStore,
+  //       date: reservationDate,
+  //       time: reservationTime,
+  //       age: userAge,
+  //     }),
+  //   })
+  //     .then(
+  //       (res) =>
+  //         (res.status === 200 || res.status === 201) &&
+  //         setUploadReservationData(true)
+  //     )
+  //     .then(() => getReservationNum());
+  //   window.scrollTo(0, 0);
+  // };
+
   const handleReviewSubmit = () => {
-    console.log(reservationInfo);
-    setUploadReservationData(true);
-    // 예약 정보 백한테 전송+headers에 유저 token 담아서 -> 응답으로 예약번호 받아야 함
-    // fetch("api 주소")
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     if (res.status === 200 || res.status === 201) {
-    //       setUploadReservationData(true);
-    //     }
-    //   });
+    const postObj = {
+      store: reservationStore,
+      date: reservationDate,
+      time: reservationTime,
+      age: userAge,
+    };
+    postReservationInfo(postObj)
+      .then(
+        (res) =>
+          (res.status === 200 || res.status === 201) &&
+          setUploadReservationData(true)
+      )
+      .then(() =>
+        fetchReservationConfirmInfo("GET").then((res) =>
+          setReservationNum(
+            res.reservation_list[res.reservation_list.length - 1].reservation_no
+          )
+        )
+      );
+    window.scrollTo(0, 0);
   };
 
   return uploadReservationData ? (
@@ -58,6 +155,14 @@ const FlagshipReservation = () => {
       <div>
         <table className="confirmForm">
           <tbody>
+            <tr>
+              <th>
+                <p>예약 번호</p>
+                <span>Reservation No. </span>
+              </th>
+              <td>{reservationNum}</td>
+            </tr>
+
             <tr>
               <th>
                 <p>예약 서비스</p>
@@ -103,7 +208,7 @@ const FlagshipReservation = () => {
             <tr>
               <th>
                 <p>동반인</p>
-                <span>Companion’s Info </span>
+                <span>Campanion’s Info </span>
               </th>
               <td>- / -</td>
             </tr>
@@ -372,70 +477,12 @@ const FlagshipReservation = () => {
                 <span>Age</span>
               </th>
               <td>
-                <SelectBox>
-                  <option
-                    name="userAge"
-                    value="15~19세"
-                    onChange={handleReservationInfo}
-                  >
-                    15~19세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="20~24세"
-                    onChange={handleReservationInfo}
-                  >
-                    20~24세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="25~29세"
-                    onChange={handleReservationInfo}
-                  >
-                    25~29세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="30~34세"
-                    onChange={handleReservationInfo}
-                  >
-                    30~34세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="35~39세"
-                    onChange={handleReservationInfo}
-                  >
-                    35~39세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="40~44세"
-                    onChange={handleReservationInfo}
-                  >
-                    40~44세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="45~49세"
-                    onChange={handleReservationInfo}
-                  >
-                    45~49세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="50~54세"
-                    onChange={handleReservationInfo}
-                  >
-                    50~54세
-                  </option>
-                  <option
-                    name="userAge"
-                    value="55세 이상"
-                    onChange={handleReservationInfo}
-                  >
-                    55세 이상
-                  </option>
+                <SelectBox name="userAge" onChange={handleReservationInfo}>
+                  {ageArr.map((age, idx) => (
+                    <option value={age} key={idx}>
+                      {age}
+                    </option>
+                  ))}
                 </SelectBox>
               </td>
             </tr>

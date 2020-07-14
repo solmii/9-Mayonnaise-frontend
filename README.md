@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💁🏻‍♀️ Introduction
 
-## Available Scripts
+- 피부 수분에 대한 연구를 기초로 한 화장품 브랜드 라네즈(https://www.laneige.com/kr/ko/) 웹사이트 클론 프로젝트
+- 개발기간 : 2020.07.06 ~ 2020.07.17(약 2주)
+- 개발인원 : 3 Front-end(강솔미, 김지인, 김민지), 3 Back-end(한준수, 박준모, 양희연)
+- [Back-end Github](https://github.com/wecode-bootcamp-korea/9-Mayonnaise-backend)
 
-In the project directory, you can run:
+# 📼 Demo
 
-### `npm start`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xIFB2U80wgc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 👩🏻‍💻 Technologies
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- JavaScript(ES6)
+- React.js (CRA, Function형 component 사용(Hooks))
+- Styled Component
+- Git / Github
 
-### `npm test`
+### React 라이브러리
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- react-awesome-slider
+- react-dom
+- react-kakao-login
+- react-modal
+- react-rating
+- react-router-dom
+- react-script
+- react-scroll
+- react-slick
+- react-slot-machine
+- slick-carousel
 
-### `npm run build`
+# 🌱 Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 회원가입 / 로그인 페이지
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- 아이디 및 패스워드 유효성 검사<br/>
+  (아이디, 비밀번호 조건 확인 및 비밀번호, 비밀번호 확인 일치 여부 검사)
+- 카카오 소셜 로그인
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 메인 페이지
 
-### `npm run eject`
+- Nav, Footer 바
+- 메인 페이지 최상단 슬라이더
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 제품 리스트 페이지
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 제품 상세 페이지
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-
 
-## Learn More
+### 장바구니 페이지
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 유저 정보 확인 후 백엔드 서버에 저장된 장바구니 데이터 불러와서 출력
+- 수량 수정, 삭제 버튼으로 장바구니 상품 수량 변경 및 삭제 기능
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 브랜드 페이지 - 서비스 예약
 
-### Code Splitting
+- 서비스 예약 신청시 백엔드 서버로 정보를 전송하여 예약 정보 저장
+- 서비스 예약 확인 및 취소 페이지에서 예약 취소 가능
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### 브랜드 페이지 - Refill Me
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- 최상단 동영상이 자연스럽게 전환되는 애니메이션
+- 스크롤 위치에 따라 배경색이 바뀌는 기능

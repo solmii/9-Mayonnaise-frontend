@@ -13,14 +13,14 @@ class Homme extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.3.235:8000/product?menu_id=4`)
+    fetch(`http://10.58.1.117:8000/product?menu_id=4`)
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
   }
 
   getData = (num) => {
     this.setState({ categoryBox: false });
-    fetch(`http://10.58.3.235:8000/product?menu_id=4&type_id=${num}`)
+    fetch(`http://10.58.1.117:8000/product?menu_id=4&type_id=${num}`)
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
   };

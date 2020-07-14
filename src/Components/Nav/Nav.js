@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import "./Nav.scss";
 
 class Nav extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       brand: false,
       dropdownbrand: false,
@@ -85,7 +85,9 @@ class Nav extends React.Component {
                 }
               >
                 <ul className="brandSubSections">
-                  <li>리필 미 사회공헌 캠페인</li>
+                  <Link to="/brand/refillme">
+                    <li>리필 미 사회공헌 캠페인</li>
+                  </Link>
                   <li>루미너스 라이브</li>
                   <li>베스트셀러</li>
                 </ul>
@@ -272,12 +274,12 @@ class Nav extends React.Component {
                       <li>유형별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(1)}>클렌징</li>
-                    <li onClick={() => this.getData(2)}>스킨/미스트</li>
-                    <li onClick={() => this.getData(3)}>로션/에멀젼</li>
-                    <li onClick={() => this.getData(28)}>크림</li>
-                    <li onClick={() => this.getData(8)}>선케어</li>
-                    <li onClick={() => this.getData(29)}>BB</li>
+                    <li onClick={() => this.props.getData(1)}>클렌징</li>
+                    <li onClick={() => this.props.getData(2)}>스킨/미스트</li>
+                    <li onClick={() => this.props.getData(3)}>로션/에멀젼</li>
+                    <li onClick={() => this.props.getData(28)}>크림</li>
+                    <li onClick={() => this.props.getData(8)}>선케어</li>
+                    <li onClick={() => this.props.getData(29)}>BB</li>
                     <li>기프트세트</li>
                   </ul>
                   <ul className="secondColumn">
@@ -285,21 +287,23 @@ class Nav extends React.Component {
                       <li>고민별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(11)}> 수분/보습</li>
-                    <li onClick={() => this.getData(11)}>피지/모공</li>
-                    <li onClick={() => this.getData(11)}>주름/탄력/보습</li>
-                    <li onClick={() => this.getData(11)}>자외선차단</li>
+                    <li onClick={() => this.props.getData(11)}> 수분/보습</li>
+                    <li onClick={() => this.props.getData(11)}>피지/모공</li>
+                    <li onClick={() => this.props.getData(11)}>
+                      주름/탄력/보습
+                    </li>
+                    <li onClick={() => this.props.getData(11)}>자외선차단</li>
                   </ul>
                   <ul className="thirdColumn">
                     <div className="underline">
                       <li>라인별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(31)}>액티브워터</li>
-                    <li onClick={() => this.getData(32)}>블루에너지</li>
-                    <li onClick={() => this.getData(33)}>오일컨트롤</li>
-                    <li onClick={() => this.getData(20)}>워터뱅크</li>
-                    <li onClick={() => this.getData(26)}>크림 스킨</li>
+                    <li onClick={() => this.props.getData(31)}>액티브워터</li>
+                    <li onClick={() => this.props.getData(32)}>블루에너지</li>
+                    <li onClick={() => this.props.getData(33)}>오일컨트롤</li>
+                    <li onClick={() => this.props.getData(20)}>워터뱅크</li>
+                    <li onClick={() => this.props.getData(26)}>크림 스킨</li>
                     <li>기타</li>
                   </ul>
                   <ul className="fourthColumn">

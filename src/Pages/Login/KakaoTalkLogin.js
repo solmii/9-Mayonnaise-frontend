@@ -3,7 +3,7 @@ import KaKaoLogin from "react-kakao-login";
 import styled from "styled-components";
 class KakaoTalkLogin extends Component {
   responseKaKao = (kakaoUserData) => {
-    fetch("http://10.58.6.55:8000/account/kakao_login", {
+    fetch("http://10.58.1.117:8000/account/kakao-login", {
       method: "post",
       headers: {
         Authorization: kakaoUserData.response.access_token,

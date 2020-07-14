@@ -1,239 +1,240 @@
 .Nav {
-  position: relative;
-  z-index: 500;
-  .overlay {
-    &.activate {
-      position: absolute;
-      top: 0px;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.38);
-    }
-  }
-  .container_JK {
-    position: relative;
-    z-index: 5;
-    background-color: white;
-    .logo {
-      img {
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 50px;
-        width: 130px;
-        height: 21.56px;
-      }
-    }
+	position: relative;
+	z-index: 1900;
 
-    .navBar {
-      display: flex;
-      justify-content: center;
-      height: 60px;
-      position: relative;
-      .iconsection {
-        position: absolute;
-        left: 1670px;
-        top: 18px;
-        &:hover {
-          cursor: pointer;
-        }
-        .icons {
-          display: flex;
-          &:hover {
-            cursor: pointer;
-          }
+	.overlay {
+		&.activate {
+			position: absolute;
+			top: 0px;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.38);
+		}
+	}
+	.container_JK {
+		position: relative;
+		z-index: 5;
+		background-color: white;
+		.logo {
+			img {
+				position: absolute;
+				margin-top: 20px;
+				margin-left: 50px;
+				width: 130px;
+				height: 21.56px;
+			}
+		}
 
-          img {
-            width: 24px;
-            margin-left: 20px;
-          }
-        }
-      }
-      .show {
-        display: block;
-      }
-      .hide {
-        display: none;
-      }
+		.navBar {
+			display: flex;
+			justify-content: center;
+			height: 60px;
+			position: relative;
+			.iconsection {
+				position: absolute;
+				left: 1600px;
+				top: 18px;
+				&:hover {
+					cursor: pointer;
+				}
+				.icons {
+					display: flex;
+					&:hover {
+						cursor: pointer;
+					}
 
-      .brand,
-      .best,
-      .navHeader {
-        padding: 20px;
-        margin-top: 5px;
-        font: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000000;
-        &:hover {
-          cursor: pointer;
-          span {
-            font-weight: bold;
-          }
-        }
+					img {
+						width: 24px;
+						margin-left: 20px;
+					}
+				}
+			}
+			.show {
+				display: block;
+			}
+			.hide {
+				display: none;
+			}
 
-        .blackBar {
-          width: 0;
-          height: 4px;
-          background-color: black;
-          transition: width 0.2s ease-in;
+			.brand,
+			.best,
+			.navHeader {
+				padding: 20px;
+				margin-top: 5px;
+				font: 20px;
+				font-family: Arial, Helvetica, sans-serif;
+				color: #000000;
+				&:hover {
+					cursor: pointer;
+					span {
+						font-weight: bold;
+					}
+				}
 
-          &.active {
-            width: 100%;
-          }
-        }
-      }
+				.blackBar {
+					width: 0;
+					height: 4px;
+					background-color: black;
+					transition: width 0.2s ease-in;
 
-      .brand,
-      .best {
-        .brandDropDown {
-          position: absolute;
-          top: 60px;
-          left: 0;
-          margin-left: 0;
-          width: 100%;
-          height: 50px;
-          background-color: rgb(245, 245, 245);
-          border-top: rgba(199, 198, 198, 0.308) solid thin;
-          border-bottom: rgba(199, 198, 198, 0.308) solid thin;
-        }
-        .brandSubSections,
-        .bestSubSections {
-          display: flex;
-          justify-content: center;
-          margin-left: 40px;
+					&.active {
+						width: 100%;
+					}
+				}
+			}
 
-          li {
-            padding-right: 54px;
-            padding-left: 22px;
-            padding-top: 15px;
-            font-size: 15px;
-            &:hover {
-              font-weight: bold;
-            }
-          }
-        }
-      }
-      .brandUnderBar,
-      .bestUnderBar,
-      .skinUnderBar,
-      .makeUpUnderBar,
-      .hommeUnderBar,
-      .eventUnderBar {
-        position: absolute;
-        bottom: 0px;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        width: 120px;
-      }
-      .brandUnderBar {
-        left: 635px;
-      }
-      .bestUnderBar {
-        left: 760px;
-      }
-      .skinUnderBar {
-        left: 895px;
-      }
-      .makeUpUnderBar {
-        left: 997px;
-      }
-      .hommeUnderBar {
-        left: 1090px;
-      }
-      .eventUnderBar {
-        left: 1170px;
-      }
+			.brand,
+			.best {
+				.brandDropDown {
+					position: absolute;
+					top: 60px;
+					left: 0;
+					margin-left: 0;
+					width: 100%;
+					height: 50px;
+					background-color: rgb(245, 245, 245);
+					border-top: rgba(199, 198, 198, 0.308) solid thin;
+					border-bottom: rgba(199, 198, 198, 0.308) solid thin;
+				}
+				.brandSubSections,
+				.bestSubSections {
+					display: flex;
+					justify-content: center;
+					margin-left: 40px;
 
-      .skinDropDown,
-      .makeUpDropDown,
-      .hommeDropDown {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        height: 500px;
-        background-color: rgb(245, 245, 245);
-        border-top: rgba(199, 198, 198, 0.308) solid thin;
-        border-bottom: rgba(199, 198, 198, 0.308) solid thin;
-      }
+					li {
+						padding-right: 54px;
+						padding-left: 22px;
+						padding-top: 15px;
+						font-size: 15px;
+						&:hover {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			.brandUnderBar,
+			.bestUnderBar,
+			.skinUnderBar,
+			.makeUpUnderBar,
+			.hommeUnderBar,
+			.eventUnderBar {
+				position: absolute;
+				bottom: 0px;
+				text-decoration: none;
+				display: flex;
+				justify-content: center;
+				width: 120px;
+			}
+			.brandUnderBar {
+				left: 600px;
+			}
+			.bestUnderBar {
+				left: 705px;
+			}
+			.skinUnderBar {
+				left: 830px;
+			}
+			.makeUpUnderBar {
+				left: 920px;
+			}
+			.hommeUnderBar {
+				left: 1000px;
+			}
+			.eventUnderBar {
+				left: 1080px;
+			}
 
-      .wholeColumn {
-        display: flex;
-        padding-left: 480px;
-        padding-top: 60px;
+			.skinDropDown,
+			.makeUpDropDown,
+			.hommeDropDown {
+				position: absolute;
+				top: 60px;
+				left: 0;
+				margin-left: 0;
+				width: 100%;
+				height: 500px;
+				background-color: rgb(245, 245, 245);
+				border-top: rgba(199, 198, 198, 0.308) solid thin;
+				border-bottom: rgba(199, 198, 198, 0.308) solid thin;
+			}
 
-        .seeAll {
-          position: absolute;
-          top: 30px;
-          left: 477px;
-          &:hover {
-            font-weight: bolder;
-          }
-        }
+			.wholeColumn {
+				display: flex;
+				padding-left: 480px;
+				padding-top: 60px;
 
-        .firstColumn,
-        .secondColumn,
-        .thirdColumn {
-          font-size: 14px;
-          width: 250px;
-          color: rgb(58, 57, 57);
-          padding-bottom: 8px;
+				.seeAll {
+					position: absolute;
+					top: 30px;
+					left: 477px;
+					&:hover {
+						font-weight: bolder;
+					}
+				}
 
-          .underline {
-            border-bottom: rgb(54, 54, 54) solid thin;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            width: 170px;
-          }
-          li {
-            padding-top: 13px;
-            &:hover {
-              font-weight: bold;
-            }
-          }
-        }
+				.firstColumn,
+				.secondColumn,
+				.thirdColumn {
+					font-size: 14px;
+					width: 250px;
+					color: rgb(58, 57, 57);
+					padding-bottom: 8px;
 
-        .fourthColumn {
-          padding-top: 250px;
-          font-size: 14px;
-          width: 250px;
-          color: rgb(58, 57, 57);
-          padding-bottom: 8px;
+					.underline {
+						border-bottom: rgb(54, 54, 54) solid thin;
+						padding-bottom: 5px;
+						margin-bottom: 5px;
+						font-size: 16px;
+						font-weight: bold;
+						width: 170px;
+					}
+					li {
+						padding-top: 13px;
+						&:hover {
+							font-weight: bold;
+						}
+					}
+				}
 
-          :first-child {
-            margin-top: 20px;
-            color: rgb(65, 105, 236);
-            font-size: 15px;
-          }
+				.fourthColumn {
+					padding-top: 250px;
+					font-size: 14px;
+					width: 250px;
+					color: rgb(58, 57, 57);
+					padding-bottom: 8px;
 
-          .underline {
-            border-bottom: rgb(54, 54, 54) solid thin;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            width: 170px;
-          }
-          li {
-            padding-top: 14px;
-            padding-bottom: 0px;
-            font-size: 15px;
-            &:hover {
-              cursor: pointer;
-            }
-          }
+					:first-child {
+						margin-top: 20px;
+						color: rgb(65, 105, 236);
+						font-size: 15px;
+					}
 
-          img {
-            position: absolute;
-            padding-left: 20px;
-            bottom: 180px;
-            right: 450px;
-            height: 280px;
-            width: 260px;
-          }
-        }
-      }
-    }
-  }
+					.underline {
+						border-bottom: rgb(54, 54, 54) solid thin;
+						padding-bottom: 5px;
+						margin-bottom: 5px;
+						width: 170px;
+					}
+					li {
+						padding-top: 14px;
+						padding-bottom: 0px;
+						font-size: 15px;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+
+					img {
+						position: absolute;
+						padding-left: 20px;
+						bottom: 180px;
+						right: 450px;
+						height: 280px;
+						width: 260px;
+					}
+				}
+			}
+		}
+	}
 }

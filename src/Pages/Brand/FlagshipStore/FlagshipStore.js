@@ -4,17 +4,18 @@ import FlagshipIntroduction from "./FlagshipIntroduction";
 import FlagshipServices from "./FlagshipServices";
 import FlagshipReservation from "./FlagshipReservation";
 import FlagshipReservationConfirm from "./FlagshipReservationConfirm";
-import { crumb_position } from "config";
-
-const flagship_store = {
-  0: <FlagshipIntroduction />,
-  1: <FlagshipServices />,
-  2: <FlagshipReservation />,
-  3: <FlagshipReservationConfirm />,
-};
+import { crumb_position, menu_title } from "config";
 
 const FlagshipStore = () => {
   const [activeTab, setActiveTab] = useState(2);
+
+  const flagship_store = [
+    <FlagshipIntroduction />,
+    <FlagshipServices />,
+    <FlagshipReservation />,
+    <FlagshipReservationConfirm />,
+  ];
+
   return (
     <>
       <CrumbNav>
@@ -30,30 +31,15 @@ const FlagshipStore = () => {
           <nav>
             <FlagshipMenu>
               <ul>
-                <li
-                  className={activeTab === 0 ? "ActiveTab" : ""}
-                  onClick={() => setActiveTab(0)}
-                >
-                  플래그십 스토어 소개
-                </li>
-                <li
-                  className={activeTab === 1 ? "ActiveTab" : ""}
-                  onClick={() => setActiveTab(1)}
-                >
-                  서비스 소개
-                </li>
-                <li
-                  className={activeTab === 2 ? "ActiveTab" : ""}
-                  onClick={() => setActiveTab(2)}
-                >
-                  서비스 예약
-                </li>
-                <li
-                  className={activeTab === 3 ? "ActiveTab" : ""}
-                  onClick={() => setActiveTab(3)}
-                >
-                  예약확인 및 취소
-                </li>
+                {menu_title.map((title, idx) => (
+                  <li
+                    className={activeTab === idx ? "ActiveTab" : ""}
+                    onClick={() => setActiveTab(idx)}
+                    key={idx}
+                  >
+                    {title}
+                  </li>
+                ))}
               </ul>
             </FlagshipMenu>
           </nav>
@@ -113,22 +99,22 @@ const FlagshipMenu = styled.div`
     padding: 0 9%;
 
     li {
+      height: 54px;
       padding: 18px 51px;
       font-size: 17px;
       font-weight: bold;
       color: #5f5f5f;
-      cursor: pointer;
       border-bottom: 0 solid #ddd;
       transition: border 0.2s;
+      cursor: pointer;
 
       &:hover {
         border-bottom: 2px solid #000;
-        transition: border 0.2s;
       }
     }
 
     .ActiveTab {
-      border-bottom: 2px solid #000;
+      border-bottom: 2px solid black;
       color: black;
     }
   }
