@@ -19,6 +19,11 @@ class Homme extends Component {
       .then((res) => this.setState({ products: res.product_list }));
   }
 
+  // clickHandler = () => {
+  //   this.props.history.push(`/products/${products.id`)
+
+  //   onclick = {() => clickHanlder(data.productid)}
+  // }
   handleCategory = () => {
     this.setState({ categoryBox: !this.state.categoryBox });
   };
