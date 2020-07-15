@@ -58,7 +58,8 @@
         font-size: 15px;
       }
 
-      .plusSign {
+      .plusSign,
+      .minusSign {
         padding-left: 60px;
         padding-top: 10px;
         font-size: 25px;
@@ -92,12 +93,15 @@
     height: 310px;
     border: rgb(189, 187, 187) 1px solid;
     .seeAll {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: #4477be;
       text-decoration: underline;
     }
     .underline {
       width: 320px;
+      p {
+        margin-bottom: 10px;
+      }
     }
     .wholeBox {
       display: flex;

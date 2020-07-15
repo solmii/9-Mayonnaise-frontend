@@ -33,8 +33,13 @@ class SkinCare extends Component {
         <div className="filterCategoryWrapper">
           <div className="categoryBox" onClick={this.handleCategory}>
             <div className="letterCategory">카테고리</div>
-            <div className="plusSign">+</div>
+            {categoryBox ? (
+              <div className="minusSign">-</div>
+            ) : (
+              <div className="plusSign">+</div>
+            )}
           </div>
+
           <div className="categoryBox">
             <div className="letterCategory">가격순</div>
             <div className="closeSign">v</div>
