@@ -5,6 +5,7 @@ class SkinCare extends Component {
     super();
     this.state = {
       products: [],
+      categoryBox: false,
     };
   }
 
@@ -14,19 +15,24 @@ class SkinCare extends Component {
       .then((res) => this.setState({ products: res.product_list }));
   }
 
+  handleCategory = () => {
+    this.setState({ categoryBox: !this.state.categoryBox });
+  };
+
   render() {
-    const { products } = this.state;
+    const { products, categoryBox } = this.state;
     return (
       <div className="SkinCare">
         <div className="headerContainer">
           <h1>스킨케어</h1>
         </div>
+        s
         <div className="topBox">
           <p>스킨케어 &gt; </p>
           <p> 전체보기</p>
         </div>
         <div className="filterCategoryWrapper">
-          <div className="categoryBox">
+          <div className="categoryBox" onClick={this.handleCategory}>
             <div className="letterCategory">카테고리</div>
             <div className="plusSign">+</div>
           </div>
@@ -38,7 +44,13 @@ class SkinCare extends Component {
         <div className="numberOfProducts">
           스킨케어 {products.length}개 상품
         </div>
-        <div className="categoryBoxIsOpened hide"></div>
+        <div
+          className={
+            categoryBox
+              ? "categoryBoxIsOpened show"
+              : "categoryBoxIsOpened  hide"
+          }
+        ></div>
         <div className="mainContentsWhole">
           <div className="subBox">
             {products.map((element) => {
