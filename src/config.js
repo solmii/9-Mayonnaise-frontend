@@ -12,11 +12,24 @@ import quote_icon from "Image/Brand/RefillMe/quote.svg";
 import warning from "Image/Login/warning.svg";
 import checked from "Image/Login/checked.svg";
 
-// signup
-
 // detail
 import star_empty from "Image/Datail/star_empty.png";
 import star_fill from "Image/Datail/star_fill.png";
+
+// signup
+
+// PATH
+// main
+
+// "https://www.laneige.com/data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2";
+export const MAIN_SLIDER_IMG1 =
+  "https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/06/17/20200617_neo-cushion_KV_mo_1.png";
+export const MAIN_SLIDER_IMG2 =
+  "https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/04/24/cream-skin-refiner-main_kv-200424-mo_1.jpg";
+export const MAIN_SLIDER_IMG3 =
+  "https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/04/14/Laneige_WBE_Main_MOB.mp4";
+export const MAIN_SLIDER_IMG4 =
+  "https://www.drmartens.co.kr/data/cms/dr_marten_pc/images/0306afdb-3095-4a2c-a160-125dcd473c23.jpg";
 export const ARROW_ICON = "http://cdn.onlinewebfonts.com/svg/img_295694.svg";
 export const STAR_EMPTY = star_empty;
 export const STAR_FILL = star_fill;
@@ -24,6 +37,7 @@ export const STAR_FILL = star_fill;
 // signup
 
 // EXPORT
+
 // login
 export const LOGIN_BG_SM =
   "https://www.laneige.com/kr/ko/assets/image/login/login-bg-sm.jpg";
@@ -71,6 +85,8 @@ export const REFILLME_VIDEO =
 
 export const REFILLME_BG =
   "https://www.laneige.com/kr/ko/assets/image/brand/refill-me-campaign/cover-promise.jpg";
+
+// signup
 
 export const REFILL_ITEM_VIDEO1 =
   "https://www.laneige.com/kr/ko/assets/video/refill-me-campaign/csr-feature-water.mp4";
