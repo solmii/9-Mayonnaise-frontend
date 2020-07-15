@@ -1,0 +1,80 @@
+.bgBestseller {
+  height: 460px;
+  overflow: hidden;
+  .bgVideo {
+    width: 100%;
+  }
+}
+
+.MainSlider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .imageOne {
+    width: 100px;
+    height: 350px;
+    margin: 0%;
+    overflow: hidden;
+  }
+  .imageTwo {
+    width: 100px;
+    height: 350px;
+    margin: 0px;
+    overflow: hidden;
+  }
+  .imageThree {
+    margin: 0px;
+    width: 100px;
+    height: 350px;
+    margin: 0%;
+    overflow: hidden;
+  }
+  .imageFour {
+    width: 100px;
+    height: 350px;
+    margin: 0px;
+  }
+  .imageFive {
+    width: 100px;
+    height: 350px;
+    margin: 0px;
+  }
+  .imageSix {
+    width: 100px;
+    height: 350px;
+    margin: 0%;
+  }
+}
+.headerTitle {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 45%;
+  margin-bottom: 1.25rem;
+}
+.slick-slide > div {
+  display: inline-block;
+}
+
+.slick-arrow.slick-prev {
+  position: relative;
+  top: -50px;
+  left: 50px;
+  z-index: 7;
+}
+.slick-arrow.slick-next {
+  position: absolute;
+  top: -50px;
+  right: 50px;
+  z-index: 7;
+}
+
+.slick-list {
+  position: absolute;
+  width: 1180px;
+  top: -250px;
+}

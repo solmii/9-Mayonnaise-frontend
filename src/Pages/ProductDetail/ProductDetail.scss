@@ -1,0 +1,217 @@
+.breadcrumb {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  font-size: 14px;
+  margin-right: 50px;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px 20px 0;
+  color: #5f5f5f;
+  font-size: 14px;
+  line-height: 1;
+  list-style: none;
+  .breadcrumb__name-1 {
+    &::before {
+      content: ">";
+    }
+  }
+  .breadcrumb__name-2 {
+    &::before {
+      content: ">";
+    }
+  }
+  .breadcrumb__item + .breadcrumb__item {
+    position: relative;
+    margin-left: 0.5em;
+  }
+}
+
+.headerContainer {
+  background-color: white;
+  width: 1180px;
+  height: 700px;
+  min-height: 610px;
+  position: relative;
+  margin: 0 auto;
+
+  text-align: left;
+  .headerInfoContainer {
+    display: flex;
+    margin: 60px;
+
+    align-items: center;
+    justify-content: space-between;
+    .productImgContainer {
+      justify-content: center;
+      .productImg {
+        width: 450px;
+        height: 540px;
+        margin: 80px;
+        background-color: white;
+        border: 1px solid black;
+      }
+    }
+    .subImgContainer {
+      position: absolute;
+      left: 50px;
+      top: 240px;
+
+      .subImg {
+        display: flex;
+        margin: 0px 0px 10px 0px;
+
+        width: 52px;
+        height: 52px;
+        left: 0px;
+      }
+    }
+  }
+  .hashtag {
+    position: absolute;
+    top: 85px;
+    right: 200px;
+    .hashtag-1 {
+      background: #79a3dc;
+    }
+  }
+  .name {
+    position: absolute;
+    top: 113px;
+
+    right: 310px;
+    margin: 12px 0;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .sking {
+    margin: 0 0 0 20px;
+    background: #79a3dc;
+    line-height: 1;
+  }
+  .productInfoSubname {
+    position: absolute;
+    top: 170px;
+    right: 340px;
+    font-size: 15px;
+  }
+  .productInfoName {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  .discription {
+    position: absolute;
+    top: 230px;
+    height: 80px;
+    right: 13px;
+    color: #000;
+    line-height: 1.2;
+    border-bottom: 1px solid black;
+  }
+  .totalPrice {
+    display: flex;
+    width: 450px;
+    margin-left: 70px;
+
+    .volume {
+      margin: 0 300px 0 0;
+    }
+    .price {
+      position: absolute;
+      right: 3px;
+    }
+  }
+  .btnContainer {
+    position: absolute;
+
+    width: 380px;
+    height: 49px;
+    .buyBtn {
+      position: relative;
+      left: 70px;
+      top: 25px;
+      margin: 16px 0 0 0;
+      padding: 15px 25px;
+      color: white;
+      border: 1px solid #2b2b2b;
+      background-color: #2b2b2b;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0;
+      line-height: 1;
+
+      transition: all 0.2s ease-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.productInfoColor {
+  border-bottom: 1px solid black;
+}
+.colorName {
+  margin-bottom: 10px;
+}
+
+.colorImg {
+  border-radius: 100%;
+  margin: 7px 14px 7px 0;
+}
+
+.colorImg:hover {
+  width: 30px;
+}
+.tab-link-1 {
+  margin: 20px 20px 20px;
+}
+.tab-link-2 {
+  margin: 20px 20px 20px 20px;
+}
+.tabs {
+  position: relative;
+  display: flex;
+  height: 54px;
+  font-size: 1.0625rem;
+  justify-content: center;
+  color: #ddd;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.pdp__tabs {
+  margin-bottom: 500px;
+
+  .pdp__tabs .tab-link {
+    height: 100%;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  .pdp__tabs .tab-link + .tab-link {
+    margin-left: 0;
+  }
+  .pdp__tabs.is-sticky {
+    position: fixed;
+    top: -1px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+}
