@@ -10,20 +10,18 @@ class Homme extends Component {
     };
   }
 
-  /*const LIMIT = 16;
-  const nextOffset = LIMIT + offset;*/
+  // const LIMIT = 16;
+  // const nextOffset = LIMIT + offset;
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/data_product.json")
+    fetch("http://10.58.1.176:8000/product?menu_id=4")
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
   }
 
-  // clickHandler = () => {
-  //   this.props.history.push(`/products/${products.id`)
+  //   clickHandler = () => {
+  //  this.props.history.push(`/products/${products.id`)
 
-  //   onclick = {() => clickHanlder(data.productid)}
-  // }
   handleCategory = () => {
     this.setState({ categoryBox: !this.state.categoryBox });
   };
@@ -134,6 +132,9 @@ class Homme extends Component {
               );
             })}
           </div>
+        </div>
+        <div className="paginationBox">
+          <button>1</button>
         </div>
       </div>
     );

@@ -9,9 +9,11 @@
   }
 
   .headerContainer {
-    height: 320px;
+    min-height: 300px;
+    max-height: 300px;
     width: 100vw;
     background-image: url("https://www.laneige.com/kr/ko/skincare/__icsFiles/metafile/2019/11/26/skincare-header-bg-lg.jpg");
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,6 +160,18 @@
           color: rgb(51, 51, 51);
           font-size: 17px;
         }
+      }
+    }
+  }
+  .paginationBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    button {
+      color: black;
+      padding: 15px;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
