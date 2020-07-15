@@ -6,6 +6,7 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
+      brand: false,
       dropdownbrand: false,
       dropdownbest: false,
       dropdownskin: false,
@@ -15,34 +16,34 @@ class Nav extends React.Component {
     };
   }
 
-  // handleDropDown = (e) => {
-  //   const { name, value } = e.target;
-  //   this.setState({ [name]: ![value] });
+  handleDropDown = (e) => {
+    this.setState({ [name]: true });
+    console.log(this.state.dropdownbrand);
+  };
+
+  // handleBrandDropDown = () => {
+  //   this.setState({ dropdownbrand: !this.state.dropdownbrand });
   // };
 
-  handleBrandDropDown = () => {
-    this.setState({ dropdownbrand: !this.state.dropdownbrand });
-  };
+  // handleBestDropDown = () => {
+  //   this.setState({ dropdownbest: !this.state.dropdownbest });
+  // };
 
-  handleBestDropDown = () => {
-    this.setState({ dropdownbest: !this.state.dropdownbest });
-  };
+  // handleSkinDropDown = () => {
+  //   this.setState({ dropdownskin: !this.state.dropdownskin });
+  // };
 
-  handleSkinDropDown = () => {
-    this.setState({ dropdownskin: !this.state.dropdownskin });
-  };
+  // handleMakeUpDropDown = () => {
+  //   this.setState({ dropdownmakeup: !this.state.dropdownmakeup });
+  // };
 
-  handleMakeUpDropDown = () => {
-    this.setState({ dropdownmakeup: !this.state.dropdownmakeup });
-  };
+  // handleHommeDropDown = () => {
+  //   this.setState({ dropdownhomme: !this.state.dropdownhomme });
+  // };
 
-  handleHommeDropDown = () => {
-    this.setState({ dropdownhomme: !this.state.dropdownhomme });
-  };
-
-  handleEventDropDown = () => {
-    this.setState({ dropdownevent: !this.state.dropdownevent });
-  };
+  // handleEventDropDown = () => {
+  //   this.setState({ dropdownevent: !this.state.dropdownevent });
+  // };
 
   render() {
     const {
