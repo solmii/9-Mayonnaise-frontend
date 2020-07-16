@@ -132,47 +132,47 @@ class Nav extends React.Component {
                       <li>유형별</li>
                     </div>
                     <li>전체보기</li>
-                    <li>클렌징</li>
-                    <li>스킨/미스트</li>
-                    <li>로션/에멀젼</li>
-                    <li>세럼/에센스</li>
-                    <li>젤/크림</li>
-                    <li>미스크/팩</li>
-                    <li>아이케어</li>
-                    <li>선케어</li>
-                    <li>립케어</li>
-                    <li>키프트세트</li>
+                    <li onClick={() => this.getData(1)}>클렌징</li>
+                    <li onClick={() => this.getData(2)}>스킨/미스트</li>
+                    <li onClick={() => this.getData(3)}>로션/에멀젼</li>
+                    <li onClick={() => this.getData(4)}>세럼/에센스</li>
+                    <li onClick={() => this.getData(5)}>젤/크림</li>
+                    <li onClick={() => this.getData(6)}>마스크/팩</li>
+                    <li onClick={() => this.getData(7)}>아이케어</li>
+                    <li onClick={() => this.getData(8)}>선케어</li>
+                    <li onClick={() => this.getData(9)}>립케어</li>
+                    <li>기프트세트</li>
                   </ul>
                   <ul className="secondColumn">
                     <div className="underline">
                       <li>고민별</li>
                     </div>
                     <li>전체보기</li>
-                    <li>밸런싱</li>
-                    <li>수분/보습</li>
-                    <li>민감/진정</li>
-                    <li>브라이트닝</li>
-                    <li>안티에이징</li>
-                    <li>피지/모공</li>
-                    <li>자외선차단</li>
+                    <li onClick={() => this.getData(10)}>밸런싱</li>
+                    <li onClick={() => this.getData(11)}>수분/보습</li>
+                    <li onClick={() => this.getData(12)}>민감/진정</li>
+                    <li onClick={() => this.getData(13)}>브라이트닝</li>
+                    <li onClick={() => this.getData(14)}>안티에이징</li>
+                    <li onClick={() => this.getData(15)}>피지/모공</li>
+                    <li onClick={() => this.getData(16)}>자외선차단</li>
                   </ul>
                   <ul className="thirdColumn">
                     <div className="underline">
                       <li>라인별</li>
                     </div>
                     <li>전체보기</li>
-                    <li>래디언-C</li>
-                    <li>클리어-C</li>
-                    <li>베이직케어</li>
-                    <li>워터뱅크</li>
-                    <li>포커스 액티브 앰플</li>
-                    <li>퍼펙트리뉴</li>
-                    <li>타임프리즈</li>
-                    <li>슬리핑케어</li>
-                    <li>프레시카밍</li>
-                    <li>크림 스킨</li>
-                    <li>화이트듀</li>
-                    <li>기타</li>
+                    <li onClick={() => this.getData(17)}>래디언-C</li>
+                    <li onClick={() => this.getData(18)}>클리어-C</li>
+                    <li onClick={() => this.getData(19)}>베이직케어</li>
+                    <li onClick={() => this.getData(20)}>워터뱅크</li>
+                    <li onClick={() => this.getData(21)}>포커스 액티브 앰플</li>
+                    <li onClick={() => this.getData(22)}>퍼펙트리뉴</li>
+                    <li onClick={() => this.getData(23)}>타임프리즈</li>
+                    <li onClick={() => this.getData(24)}>슬리핑케어</li>
+                    <li onClick={() => this.getData(25)}>프레시카밍</li>
+                    <li onClick={() => this.getData(26)}>크림 스킨</li>
+                    <li onClick={() => this.getData(27)}>화이트듀</li>
+                    <li onClick={() => this.getData(5)}>기타</li>
                   </ul>
                   <ul className="fourthColumn">
                     <li>NEW ARRIVAL</li>
@@ -263,12 +263,12 @@ class Nav extends React.Component {
                       <li>유형별</li>
                     </div>
                     <li>전체보기</li>
-                    <li>클렌징</li>
-                    <li>스킨/미스트</li>
-                    <li>로션/에멀젼</li>
-                    <li>크림</li>
-                    <li>선케어</li>
-                    <li>BB</li>
+                    <li onClick={() => this.getData(1)}>클렌징</li>
+                    <li onClick={() => this.getData(2)}>스킨/미스트</li>
+                    <li onClick={() => this.getData(3)}>로션/에멀젼</li>
+                    <li onClick={() => this.getData(28)}>크림</li>
+                    <li onClick={() => this.getData(8)}>선케어</li>
+                    <li onClick={() => this.getData(29)}>BB</li>
                     <li>기프트세트</li>
                   </ul>
                   <ul className="secondColumn">
@@ -276,21 +276,21 @@ class Nav extends React.Component {
                       <li>고민별</li>
                     </div>
                     <li>전체보기</li>
-                    <li> 수분/보습</li>
-                    <li>피지/모공</li>
-                    <li>주름/탄력/보습</li>
-                    <li>자외선차단</li>
+                    <li onClick={() => this.getData(11)}> 수분/보습</li>
+                    <li onClick={() => this.getData(11)}>피지/모공</li>
+                    <li onClick={() => this.getData(11)}>주름/탄력/보습</li>
+                    <li onClick={() => this.getData(11)}>자외선차단</li>
                   </ul>
                   <ul className="thirdColumn">
                     <div className="underline">
                       <li>라인별</li>
                     </div>
                     <li>전체보기</li>
-                    <li>액티브워터</li>
-                    <li>블루에너지</li>
-                    <li>오일컨트롤</li>
-                    <li>워터뱅크</li>
-                    <li>크림 스킨</li>
+                    <li onClick={() => this.getData(31)}>액티브워터</li>
+                    <li onClick={() => this.getData(32)}>블루에너지</li>
+                    <li onClick={() => this.getData(33)}>오일컨트롤</li>
+                    <li onClick={() => this.getData(20)}>워터뱅크</li>
+                    <li onClick={() => this.getData(26)}>크림 스킨</li>
                     <li>기타</li>
                   </ul>
                   <ul className="fourthColumn">
