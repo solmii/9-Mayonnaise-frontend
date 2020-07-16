@@ -11,12 +11,17 @@ class SkinCare extends Component {
   }
 
   componentDidMount() {
-    this.getData();
+    fetch(
+      `http://10.58.7.218:8000/product?menu_id=3&offset=${this.state.offset}`
+    )
+      .then((res) => res.json())
+      .then((res) => this.setState({ products: res.product_list }));
   }
 
-  getData = () => {
+  getData = (num) => {
+    this.setState({ categoryBox: false });
     fetch(
-      `http://10.58.1.176:8000/product?menu_id=3&offset=${this.state.offset}`
+      `http://10.58.7.218:8000/product?menu_id=3&type_id=${num}&offset=${this.state.offset}`
     )
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
@@ -29,6 +34,10 @@ class SkinCare extends Component {
     }
   }
 
+  handleClick = () => {
+    this.props.history.push(`/product?menu_id=${this.state.products.id}`);
+  };
+
   handlePaging = (e) => {
     this.setState({ offset: (Number(e.target.innerText) - 1) * 16 });
   };
@@ -38,6 +47,7 @@ class SkinCare extends Component {
   };
 
   render() {
+    console.log("render");
     const { products, categoryBox } = this.state;
     return (
       products && (
@@ -83,19 +93,19 @@ class SkinCare extends Component {
                 <div className="division">
                   <div className="subDivision">
                     <p>전체보기</p>
-                    <p>스킨/미스트</p>
-                    <p>세럼/에센스</p>
-                    <p>마스크/팩</p>
-                    <p>선케어</p>
+                    <p onClick={() => this.getData(2)}>스킨/미스트</p>
+                    <p onClick={() => this.getData(4)}>세럼/에센스</p>
+                    <p onClick={() => this.getData(6)}>마스크/팩</p>
+                    <p onClick={() => this.getData(8)}>선케어</p>
                     <p>기프트세트</p>
                   </div>
                   <div className="division">
                     <div className="subDivision">
-                      <p>클렌징</p>
-                      <p>로션/에멀젼</p>
-                      <p>젤/크림</p>
-                      <p>아이케어</p>
-                      <p>립케어</p>
+                      <p onClick={() => this.getData(1)}>클렌징</p>
+                      <p onClick={() => this.getData(3)}>로션/에멀젼</p>
+                      <p onClick={() => this.getData(5)}>젤/크림</p>
+                      <p onClick={() => this.getData(7)}>아이케어</p>
+                      <p onClick={() => this.getData(9)}>립케어</p>
                     </div>
                   </div>
                 </div>
@@ -107,16 +117,15 @@ class SkinCare extends Component {
                 <div className="division">
                   <div className="subDivision">
                     <p>전체보기</p>
-                    <p>수분/보습</p>
-                    <p>브라이트닝</p>
-                    <p>피지/모공</p>
-                    <p>수분/보습</p>
+                    <p onClick={() => this.getData(11)}>수분/보습</p>
+                    <p onClick={() => this.getData(13)}>브라이트닝</p>
+                    <p onClick={() => this.getData(15)}>피지/모공</p>
                   </div>
                   <div className="subDivision">
-                    <p>밸런싱</p>
-                    <p>민감/진정</p>
-                    <p>안티에이징</p>
-                    <p>자외선차단</p>
+                    <p onClick={() => this.getData(10)}>밸런싱</p>
+                    <p onClick={() => this.getData(12)}>민감/진정</p>
+                    <p onClick={() => this.getData(14)}>안티에이징</p>
+                    <p onClick={() => this.getData(16)}>자외선차단</p>
                   </div>
                 </div>
               </div>
@@ -127,20 +136,20 @@ class SkinCare extends Component {
                 <div className="division">
                   <div className="subDivision">
                     <p>전체보기</p>
-                    <p>클리어-C</p>
-                    <p>워터뱅크</p>
-                    <p>퍼펙트리뉴</p>
-                    <p>슬리핑케어</p>
-                    <p>크림 스킨</p>
+                    <p onClick={() => this.getData(18)}>클리어-C</p>
+                    <p onClick={() => this.getData(20)}>워터뱅크</p>
+                    <p onClick={() => this.getData(22)}>퍼펙트리뉴</p>
+                    <p onClick={() => this.getData(24)}>슬리핑케어</p>
+                    <p onClick={() => this.getData(26)}>크림 스킨</p>
                     <p>기타</p>
                   </div>
                   <div className="subDivision">
-                    <p>래디언-C</p>
-                    <p>베이직케어</p>
-                    <p>포커스 액티브 앰플</p>
-                    <p>타임프리즈</p>
-                    <p>프레시카밍</p>
-                    <p>화이트듀</p>
+                    <p onClick={() => this.getData(17)}>래디언-C</p>
+                    <p onClick={() => this.getData(19)}>베이직케어</p>
+                    <p onClick={() => this.getData(21)}>포커스 액티브 앰플</p>
+                    <p onClick={() => this.getData(23)}>타임프리즈</p>
+                    <p onClick={() => this.getData(25)}>프레시카밍</p>
+                    <p onClick={() => this.getData(27)}>화이트듀</p>
                   </div>
                 </div>
               </div>
@@ -150,7 +159,7 @@ class SkinCare extends Component {
             <div className="subBox">
               {products.map((element) => {
                 return (
-                  <div className="productBox">
+                  <div className="productBox" onClick={this.handleClick}>
                     <img src={element.product_image} alt="Laneige" />
                     <p>
                       #{element.product_tag[0]} #{element.product_tag[1]}

@@ -118,6 +118,9 @@
             padding-top: 10px;
             width: 200px;
             height: 200px;
+            &:hover {
+              cursor: pointer;
+            }
             p {
               padding-top: 13px;
               color: rgb(92, 91, 91);

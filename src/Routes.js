@@ -36,6 +36,11 @@ class Routes extends React.Component {
           <Route exact path="/skincare" component={SkinCare} />
           <Route exact path="/homme" component={Homme} />
           <Route exact path="/brand/refillme" component={RefillMe} />
+          {/* <Route
+            exact
+            path="/products/list/:category"
+            component={ProductList}
+          /> */}
           {/* <Route exact path="/product_detail/test" component={ReviewModal} /> */}
         </Switch>
       </Router>
