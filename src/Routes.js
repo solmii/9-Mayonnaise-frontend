@@ -15,17 +15,17 @@ import RefillMe from "Pages/Brand/RefillMe";
 // import SignUp from "Pages/ProductDetail/SignUp";
 // import Main from "Pages/ProductDetail/Main";
 
-
-
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
+
           {/* <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} /> */}
           <Route exact path="/product_detail" component={ProductDetail} />
+          <Route exact path="/product_detail/:id" component={ProductDetail} />
           <Route exact path="/" component={Main} />
           <Route exact path="/product_review" component={ProductDetailReview} />
           <Route exact path="/product_card" component={ProductDetailCard} />
@@ -35,7 +35,6 @@ class Routes extends React.Component {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/brand/refillme" component={RefillMe} />
           {/* <Route exact path="/product_detail/test" component={ReviewModal} /> */}
-
         </Switch>
       </Router>
     );

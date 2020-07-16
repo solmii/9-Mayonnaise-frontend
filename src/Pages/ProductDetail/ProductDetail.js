@@ -1,88 +1,32 @@
 import React, { Component } from "react";
 import ProductDetailReview from "./ProductDetailReview";
 import "./ProductDetail.scss";
+import "./ProductDetailData.scss";
 
 export default class ProductDetail extends Component {
   constructor() {
     super();
 
     this.state = {
-      productData: {},
-      productImg: [],
-      htmlBody: [],
-      hashtag: [],
-      productName: [],
-      productSubName: [],
-      productComment: [],
-      productVolume: [],
-      productPrice: [],
-      clickHandlerId: "",
-      subId: 0,
-      subIdNum: 0,
-      reviewArr: [],
-      product_detail: [],
+      productDetail: {}
     };
   }
 
-  // componentDidMount() {
-  //   fetch("http://10.58.7.35:8000/product/detail?product_id=1")
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res));
-  // }
-  // htmlBody data 받아오기
-  componentDidMount() {
-    // const id = this.props.match.params.pid;
-    fetch("http://10.58.7.99:8000/product/detail?product_id=1")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-    // .then((res) => this.setState({ htmlBody: res.item.product_feature }));
+  clickHandler(idx) {
+    this.setState({ colorIdNum: idx });
   }
-  // htmlBody: res,
-  // [this.state.htmlBody[0].product_name]; //백엔드로부터 받아오는 html.body의 첫번째는 프로덕트 네임이다
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   const top = ReactDOM.findDOMNode(this).getBoundingClientRect().top;
-  //   top < 0 && this.setState({ a: "b" });
-  //   return true;
-  // }
-
-  // onScroll = (e) => {
-  //   console.log(window.pageYOffset);
-  // };
-
-  // // this.state.htmlBody.length !== 0 && this.state.htmlBody.product_id// htmlbody에 아무것도 없지 않고 그것이 product_id일때
-  // // this.state.htmlBody.length !== 0 && this.state.htmlBody.color
-
-  // clickHandler(num) {
-  //   this.setState({ subIdNum: num });
-  // }
-  // //장바구니 버튼 클릭 시 상품 정보 POST로 서버에 전송
-  // cartHandler = () => {
-  //   fetch(`${API_URL_HG}/cart/order`, {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization:
-  //         "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.aSotmF-u-BxCD-U_jbFTRpZf6P-AHDKRhBynD-21DvA",
-  //     },
-  //     body: JSON.stringify({
-  //       product_id: this.state.htmlBody.product_id,
-  //       color: this.state.htmlBody.color[this.state.subIdNum],
-  //       quantity: 1,
-  //     }),
-  //   });
-  // };this.state.htmlBody
+  componentDidMount() {
+    fetch(`http://10.58.7.218:8000/product/${this.props.match.params.id}`)
+      .then((res) => res.json())
+      .then(res => this.setState({ productDetail: res.item }));
+  }
 
   render() {
-    console.log("dddddd: ", this.state.htmlBody);
-    // const { htmlBody } = this.state;
-    const { htmlBody } = this.state.htmlBody;
-    // const htmlCode = this.state.htmlBody.length !== 0 && Description;
-    // const teaser = this.state.htmlBody.length !== 0 && Teaser;
-    // const stage = this.state.htmlBody.length !== 0 && Stage;
+    const { product_feature } = this.state.productDetail;
 
     return (
       <div className="Product">
-        {/* <Header /> */}
         <section className="ProductDetailSite">
           <ol className="breadcrumb">
             <li className="breadcrumb__item">
@@ -111,47 +55,32 @@ export default class ProductDetail extends Component {
               <div className="headerInfoContainer">
                 <div className="productInfoSub">
                   <p className="subName">
-                    {/* {this.state.htmlBody.length !== 0 && //메인사진 옆에 클릭되는 사진
-                      this.state.htmlBody.sub[this.state.subIdNum]} */}
                   </p>
                   <div className="subImgContainer">
-                    <img
-                      onClick={() => this.clickHandler(0)}
-                      className="subImg"
-                      // src={
-                      //   this.state.htmlBody.length !== 0 &&
-                      //   this.state.htmlBody.product_image[0] //서브이미지에서 첫번째꺼 클릭하면 메인의 사진이 바뀐다
-                      // }
-                      alt=""
-                    />
-                    <img
-                      onClick={() => this.clickHandler(1)}
-                      className="subImg"
-                      // src={
-                      //   this.state.htmlBody.length !== 0 &&
-                      //   this.state.htmlBody.product_image[1]
-                      // }
-                      alt=""
-                    />
-                    <img
-                      // onClick={() => this.clickHandler(2)}
-                      className="subImg"
-                      // src={
-                      //   this.state.htmlBody.length !== 0 &&
-                      //   this.state.htmlBody.product_image[2]
-                      // }
-                      alt=""
-                    />
+                    {this.state.productDetail.product_images && this.state.productDetail.product_images.map((el, idx) => {
+                      return (
+                        <img
+                          onClick={() => this.clickHandler(idx)}
+                          className="subImg"
+                          src={el}
+                          alt="subImg"
+                        />
+                      )
+                    })}
                   </div>
                 </div>
                 <div className="productImgContainer">
                   <img
                     className="productImg"
+                    src={
+                      this.state.product_feature !== 0 &&    
+                      this.state.productDetail.product_images
+                    }
                     // src={
-                    //   this.state.htmlBody.length !== 0 &&
-                    //   this.state.htmlBody.product_images[
+                    //   this.state.product_feature.length !== 0 &&
+                    //   this.state.product_feature.product_images[
                     //     `sub${this.state.subIdNum + 1}` //서브이미지가 클릭될 때마다 여기가 변해야함
-                    //   ] //메인사진, htmlbody에 어떤것이 있고 htmlbody의 product_images일때 컬러가 coloridnum+1씩 해준다
+                    //   ] //메인사진, product_feature에 어떤것이 있고 product_feature의 product_images일때 컬러가 coloridnum+1씩 해준다
                     // } //궁금한게 같이 넘어오는 사진인데 state.이름만 다르게 해서 각각 받을 수 있는지 궁금함 아니면 너무 헷갈린다..
                     alt=""
                   />
@@ -159,32 +88,32 @@ export default class ProductDetail extends Component {
                 <div className="productInfo">
                   <div className="productInfoBox">
                     <p className="hashtag">
-                      <span className="hashtag-1">#브라이트닝</span>{" "}
-                      <span className="sking">#맑고투명한피부</span>
-                      {/* {this.state.htmlBody.product_hashtag} */}
+                      {/* <span className="hashtag-1">{this.state.product_feature.product_tag}</span>{" "} */}
+                      {/* <span className="sking">{this.state.product_feature.product_tag}</span> */}
+                      {/* {this.state.product_feature.product_hashtag} */}
                     </p>
                     <p className="name">
-                      제품이름
-                      {/* {this.state.htmlBody.product_name}제품이름 */}
+                      
+                      {/* {this.state.product_feature.product_name_ko} */}
                     </p>
                     <p className="productInfoSubname">
-                      제품 서브네임
-                      {/* {this.state.htmlBody.product_subname} */}
+                      
+                      {/* {this.state.product_feature.product_name_en} */}
                     </p>
                     <p className="discription">
-                      밀키 텍스처가 피부에 순하게 작용해 촉촉하고 뽀얀 우윳빛
+                   
                       <br />
-                      피부로 가꿔줄 클렌징 폼이에요.
-                      {/* {this.state.htmlBody.product_description} */}
+                    
+                      {/* {this.state.product_feature.product_description} */}
                     </p>
                     <div className="totalPrice">
                       <p className="volume">
-                        30ml
-                        {/* {this.state.htmlBody.product_volume} */}
+                    
+                        {/* {this.state.product_feature.product_volume} */}
                       </p>
                       <p className="price">
-                        23000원
-                        {/* {this.state.htmlBody.product_price}3000원 */}
+                      
+                        {/* {this.state.product_feature.product_price} */}
                       </p>
                     </div>
                   </div>
@@ -206,8 +135,8 @@ export default class ProductDetail extends Component {
                   <img
                     className="img"
                     src={
-                      this.state.htmlBody.length !== 0 &&
-                      this.state.htmlBody.product_images[
+                      this.state.product_feature.length !== 0 &&
+                      this.state.product_feature.product_images[
                         `color${this.state.subIdNum + 1}`
                       ][this.state.subId]
                     }
@@ -218,8 +147,8 @@ export default class ProductDetail extends Component {
                   <img
                     className="img"
                     src={
-                      this.state.htmlBody.length !== 0 &&
-                      this.state.htmlBody.product_images[
+                      this.state.product_feature.length !== 0 &&
+                      this.state.product_feature.product_images[
                         `color${this.state.subIdNum + 1}`
                       ][this.state.subId + 1]
                     }
@@ -230,8 +159,8 @@ export default class ProductDetail extends Component {
                   <img
                     className="img"
                     src={
-                      this.state.htmlBody.length !== 0 &&
-                      this.state.htmlBody.product_images[
+                      this.state.product_feature.length !== 0 &&
+                      this.state.product_feature.product_images[
                         `color${this.state.subIdNum + 1}`
                       ][this.state.subId + 2]
                     }
@@ -242,8 +171,8 @@ export default class ProductDetail extends Component {
                   <img
                     className="img"
                     src={
-                      this.state.htmlBody.length !== 0 &&
-                      this.state.htmlBody.product_images[
+                      this.state.product_feature.length !== 0 &&
+                      this.state.product_feature.product_images[
                         `color${this.state.subIdNum + 1}`
                       ][this.state.subId + 3]
                     }
@@ -267,11 +196,13 @@ export default class ProductDetail extends Component {
             </div>
           </section>
           <article>
-            <div dangerouslySetInnerHTML={{ __html: htmlBody }}></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: this.state.productDetail.product_feature }}
+            ></div>
             {/* <div dangerouslySetInnerHTML={{ __html: htmlCode }}></div>
             <div dangerouslySetInnerHTML={{ __html: stage }}></div> */}
           </article>
-          <ProductDetailReview />
+          <ProductDetailReview productId={this.state.productDetail.product_id} />
         </section>
         {/* <Footer /> */}
       </div>

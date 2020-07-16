@@ -1,0 +1,12 @@
+{
+    "reviews": [
+        {
+            "user_id": "junmo",
+            "rate: "4.5",
+            "create at": "2020-07-11T15:43:05.541Z",
+            "comment": "이미지 업로드 할거야",
+            "image":"https://mayonez-s3.s3.ap-northeast-2.amazonaws.com/dog-panting.jpg",
+            "skin_type": "민감성"
+        },
+    ]
+}

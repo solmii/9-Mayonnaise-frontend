@@ -19,7 +19,7 @@ export default class ProductDetailCard extends Component {
   };
 
   render() {
-    const { isActive } = this.state;
+    // const { isActive } = this.state;
     // const { data } = this.props;
 
     return (
@@ -31,13 +31,13 @@ export default class ProductDetailCard extends Component {
               {/* {"★".repeat(data.rating)} */}
               별점
             </span>
-            아이디{/* 아이디 <p className="font-b">아이디{data.name}</p> */}
+            {/* 아이디 <p className="font-b">아이디{this.state.user_id}</p> */}
           </div>
-          피부타입 {/* <p className="font-b">피부타입{data.skinData}</p> */}
-          날짜{/* <p className="font-b">날짜{data.yyyymmdd}</p> */}
+          {/* 피부타입 <p className="font-b">피부타입{this.state.skin_type}</p> */}
+          {/* 날짜<p className="font-b">날짜{this.state.create_at}</p> */}
           코멘트{" "}
-          {/* <p className="font-b">코멘트{data.comment}</p>
-        </div>{" "} */}
+          {/* <p className="font-b">코멘트{this.state.comment}</p> */}
+        </div>{" "}
           {/* {isActive && data.img ? (
           <div className="review_img">
             <img alt={data.title} src={data.img} />
@@ -45,11 +45,11 @@ export default class ProductDetailCard extends Component {
         ) : (
           ""
         )} */}
-          <button className="underline font-b" onClick={this.openReviewHandler}>
+          {/* <button className="underline font-b" onClick={this.openReviewHandler}>
             {isActive ? "더보기" : ""}
-          </button>
+          </button> */}
         </div>
-      </div>
+    
     );
   }
 }

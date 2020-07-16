@@ -9,17 +9,35 @@ class SectionOne extends Component {
   render() {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
     return (
-      <section>
+      <section className="SectionOne">
         <header className="MainSlideContainer">
           <div className="MainSlide">
             <AutoplaySlider
-              arrow={false}
+              arrow={true}
               play={true}
               cancelOnInteraction={false} // should stop playing on user interaction
               interval={3000}
             >
               <div data-src="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/06/17/20200617_neo-cushion_KV_pc_1.png"></div>
-              <div data-src="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/04/24/cream-skin-refiner-main_kv-200424-pc_1.jpg">
+              <div clasName="videoSlider">
+                <video
+                  className="bgVideo"
+                  preload
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop
+                  playsinline
+                  type="video/mp4"
+                  poster="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/"
+                  src="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/04/14/Laneige_WBE_Main_PC.mp4"
+                >
+                  <source
+                    src="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/04/14/Laneige_WBE_Main_MOB.mp4"
+                    poster="/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/"
+                    media="720"
+                    type="video/mp4"
+                  />
+                </video>
                 <div className="slideTextBox">
                   <h3>워터뱅크하이드로에센스</h3>
                   <h2 style={{ fontSize: "30px" }}>
@@ -33,8 +51,10 @@ class SectionOne extends Component {
             </AutoplaySlider>
           </div>
         </header>
+    
         <SectionTwo />
       </section>
+     
     );
   }
 }

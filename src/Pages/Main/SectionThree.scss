@@ -1,0 +1,55 @@
+.SectionThree {
+  .imageListClass {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    flex-wrap: wrap;
+  }
+  .imageList {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+
+  .imageList1 {
+    width: 320px;
+    height: 525px;
+    margin: 30px;
+  }
+  .imageList2 {
+    width: 320px;
+    height: 525px;
+    margin: 30px;
+  }
+  .imageList3 {
+    margin: 30px;
+    width: 320px;
+    height: 525px;
+  }
+  .imageListMiddle1 {
+    width: 663px;
+    height: 420px;
+    margin: 30px 30px 30px 0;
+  }
+  .imageListMiddle2 {
+    width: 367px;
+    height: 629px;
+    margin: 30px 0 0 30px;
+    flex-wrap: wrap;
+  }
+  .secondBottom {
+    display: flex;
+    height: 800px;
+  }
+  .imageListMiddle3 {
+    width: 367px;
+    height: 630px;
+    margin-right: 30px;
+  }
+  .imageListMiddle4 {
+    margin-top: 200px;
+    width: 663px;
+    height: 420px;
+    margin-left: 30px;
+  }
+}
