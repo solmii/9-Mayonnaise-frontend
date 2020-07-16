@@ -109,7 +109,7 @@ class Nav extends React.Component {
               </div>
             </li>
             <li
-              className="skinCare"
+              className="navHeader"
               name="dropdownskin"
               onMouseEnter={() => this.handleDropDown("dropdownskin")}
               onMouseLeave={() => this.handleDropDown("dropdownskin")}
@@ -183,7 +183,7 @@ class Nav extends React.Component {
               </div>
             </li>
             <li
-              className="makeUp"
+              className="navHeader"
               name="dropdownmakeup"
               onMouseEnter={() => this.handleDropDown("dropdownmakeup")}
               onMouseLeave={() => this.handleDropDown("dropdownmakeup")}
@@ -240,7 +240,7 @@ class Nav extends React.Component {
               </div>
             </li>
             <li
-              className="homme"
+              className="navHeader"
               name="dropdownhomme"
               onMouseEnter={() => this.handleDropDown("dropdownhomme")}
               onMouseLeave={() => this.handleDropDown("dropdownhomme")}
@@ -305,7 +305,7 @@ class Nav extends React.Component {
               </div>
             </li>
             <li
-              className="event"
+              className="navHeader"
               name="dropdownevent"
               onMouseEnter={() => this.handleDropDown("dropdownevent")}
               onMouseLeave={() => this.handleDropDown("dropdownevent")}
