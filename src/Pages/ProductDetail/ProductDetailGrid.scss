@@ -20,3 +20,42 @@
     }
   }
 }
+figure {
+  &:hover {
+    cursor: url("http://www.laneige.com/kr/ko/assets/image/a/pointer.png"),
+      pointer;
+  }
+}
+.reviewCard {
+  padding: 30px;
+}
+.Card1 {
+  display: block;
+  margin-bottom: 10px;
+}
+.Card2 {
+  margin-right: 15px;
+}
+.Card4 {
+  margin-bottom: 20px;
+}
+.Card5 {
+  margin-top: 20px;
+}
+.CardTop {
+  display: block;
+}
+.grid figure div {
+  height: 16px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.productImg33 {
+  display: inline-block;
+}
+.CardMid {
+  display: block;
+}
+.grid figure {
+  padding: 30px;
+}

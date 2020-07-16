@@ -5,6 +5,8 @@ export default class ProductDetailSource extends Component {
     super();
     this.state = {
       moreBtn: false,
+      htmlBody: [],
+      product_ingredient:[],
     };
   }
 
@@ -16,7 +18,7 @@ export default class ProductDetailSource extends Component {
   };
 
   render() {
-    // const { moreBtn } = this.state;
+    const { htmlBody } = this.state;
     // const { sourceCode } = this.props;
     return (
       <body>
@@ -52,7 +54,11 @@ export default class ProductDetailSource extends Component {
             </label>
             <label class="box-close" for="acc-close"></label>
             <div class="box-content">
-              정제수, 프로판다이올, 1,2-헥산다이올,
+            <p className="name">
+                      
+             {this.state.htmlBody.product_ingredient}
+                    </p>
+              {/* 정제수, 프로판다이올, 1,2-헥산다이올,
               피피지-13-데실테트라데세스-24, 부틸렌글라이콜, 에틸헥실글리세린,
               나이아신아마이드, 향료, 다이소
               <br />
@@ -61,7 +67,7 @@ export default class ProductDetailSource extends Component {
               시트로
               <br />
               넬올, 퀴노아씨 추출물, 징크설페이트, 토코페롤,
-              아스코빌글루코사이드
+              아스코빌글루코사이드 */}
             </div>
           </section>
           <input type="radio" name="accordion" id="cb3" />

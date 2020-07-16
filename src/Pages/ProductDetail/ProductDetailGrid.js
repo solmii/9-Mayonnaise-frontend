@@ -5,85 +5,60 @@ class ProductDetailGrid extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
+      data:[],
+      user_id: "",
+      rate:"",
+      create_at:"",
+      comment:"",
+      image:"",
+      skin_type:"",
+      reviewData: {},
+      ptConditionShow: false,
+      ptBtnOptionListShow: "피부타입",
+      btConditionShow: false,
+      btBtnOptionListShow: "작성일순",
     };
   }
 
-  // idChangeEvent = (e) => {
-  //   this.setState({ id: e.target.value });
-  //   console.log("id >>> ", this.state.id);
-  // };
-
-  // pwChangeEvent = (e) => {
-  //   this.setState({ pw: e.target.value });
-  //   console.log("pw >>> ", this.state.pw);
-  // };
-
-  // cfigureckHandler = () => {
-  //   //e.prevent.Default();
-  //   //POST
-  //   fetch("http://10.58.0.88:8000/user/signin", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       email: this.state.id,
-  //       password: this.state.pw,
-  //     }), //이 )소괄호는 아직 fetch에 소괄호니까 밑에 then 가능
-  //   })
-  //     .then((res) => res.json()) // 제이슨 바디로 온다...
-  //     .then((res) => {
-  //       if (res.token) {
-  //         localStorage.setItem("access_token", res.token);
-  //         this.props.history.push("/");
-  //       }
-  //     });
-  // };
+  componentDidMount() {
+    fetch(`http://10.58.7.12:8000/review?product_id=${this.props.productId}`)
+      .then((res) => res.json())
+      // .then((res) => console.log(res));
+      .then((res) => this.setState({ data: res.reviews }));
+  }
 
   render() {
-    return (
+    console.log("dddddd: ", this.props.reviewData);
+    //  const { data } = this.state;
+    return  (
       <section id="pattern" class="pattern">
         <div class="grid">
+          {this.props.reviewData && this.props.reviewData.map(data => {
+            return(
           <figure>
-            <div>
-              1sdasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssssssssssssssssssss
+            <div className="reviewCard">
+              
+              <div className="Card1">{data.rate}</div>
+          <div className="CardTop">
+              <div className="Card2">{data.user_id}</div>
+              <div className="Card3">{data.skin_type}</div>
+              <div className="Card4">{data.create_at}</div>
+         </div>
+              <div className="CardMid">
+              <div className="Card5">{data.comment}</div>
+           <section class="imgsec">
+              <img
+                    className="productImg33"
+                    src={data.image
+                    } width="70" height="70"
+                    alt=""
+                  /></section>
+                  </div>
+           
             </div>
           </figure>
-          <figure>
-            <div>
-              2asdssssasdssssasddssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssssss
-            </div>
-          </figure>
-          <figure>
-            <div>
-              3asdssssasdssssasdssssasdssdssssasdssssasdssdssssasdssssasdssssasdssssasdssssasdssssasdssss
-            </div>
-          </figure>
-          <figure>
-            <div>
-              sasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssss
-            </div>
-          </figure>
-          <figure>
-            <div>
-              sasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssss
-            </div>
-          </figure>
-          <figure>
-            <div>
-              asdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssss
-            </div>
-          </figure>
-          <figure>
-            <div>saasdssssasdssssasdssssasdsssssdssssasdssssasdssss</div>
-          </figure>
-          <figure>
-            <div>asdssssasdssssasdssssasdssssasdssssasdssssasdsssss</div>
-          </figure>
-          <figure>
-            <div>
-              asdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdssssasdsssss
-            </div>
-          </figure>
+            )
+          })}
         </div>
       </section>
     );
