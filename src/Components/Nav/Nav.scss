@@ -1,5 +1,6 @@
 .Nav {
   position: relative;
+  z-index: 500;
   .overlay {
     &.activate {
       position: absolute;
@@ -23,28 +24,30 @@
       }
     }
 
-    .iconsection {
-      position: absolute;
-      left: 1670px;
-      top: 18px;
-      .icons {
-        display: flex;
-        &:hover {
-          cursor: pointer;
-        }
-        img {
-          width: 24px;
-          margin-left: 20px;
-        }
-      }
-    }
-
     .navBar {
       display: flex;
       justify-content: center;
       height: 60px;
       position: relative;
+      .iconsection {
+        position: absolute;
+        left: 1670px;
+        top: 18px;
+        &:hover {
+          cursor: pointer;
+        }
+        .icons {
+          display: flex;
+          &:hover {
+            cursor: pointer;
+          }
 
+          img {
+            width: 24px;
+            margin-left: 20px;
+          }
+        }
+      }
       .show {
         display: block;
       }

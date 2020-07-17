@@ -28,33 +28,34 @@ class Footer extends React.Component {
             <span>공지사항</span>
           </li>
         </ul>
-        <div className="social">
-          <img
-            src="https://www.laneige.com/kr/ko/assets/image/sns_instagram_renew.png"
-            alt="라네즈"
-          />
-          <img
-            src=" https://www.laneige.com/kr/ko/assets/image/sns_facebook_renew.png"
-            alt="라네즈"
-          />
-          <img
-            src="https://www.laneige.com/kr/ko/assets/image/sns_youtube_renew.png"
-            alt="라네즈"
-          />
-        </div>
         <div className="bottomInfo">
           <p>고객상담실 (수신자요금부담) 080-023-5454</p>
           <p>
             <span>|</span> 운영시간 : 월-금 09:00 ~ 18:00
           </p>
+          <img
+            className="wa"
+            src="https://www.laneige.com/kr/ko/assets/image/a/wa-mark.png"
+          />
+          <div className="social">
+            <img
+              src="https://www.laneige.com/kr/ko/assets/image/sns_instagram_renew.png"
+              alt="라네즈"
+            />
+            <img
+              src=" https://www.laneige.com/kr/ko/assets/image/sns_facebook_renew.png"
+              alt="라네즈"
+            />
+            <img
+              src="https://www.laneige.com/kr/ko/assets/image/sns_youtube_renew.png"
+              alt="라네즈"
+            />
+          </div>
         </div>
+
         <p className="third">
           © <strong>AMOREPACIFIC</strong> CORPORATION. ALL RIGHTS RESERVED.
         </p>
-        <img
-          className="wa"
-          src="https://www.laneige.com/kr/ko/assets/image/a/wa-mark.png"
-        />
       </div>
     );
   }
