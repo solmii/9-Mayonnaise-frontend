@@ -1,5 +1,6 @@
 import React from "react";
 import { USER, PIN, SEARCH, CART, ORANGE } from "config";
+import { Link } from "react-router-dom";
 // import SkinCare from "Pages/ProductList/SkinCare/SkinCare";
 import "./Nav.scss";
 
@@ -52,15 +53,20 @@ class Nav extends React.Component {
               alt="라네즈"
             />
           </div>
-          <div className="iconsection">
-            <div className="icons">
-              <img src={CART} alt="Laneige" />
-              <img src={USER} alt="Laneige" />
-              <img src={PIN} alt="Laneige" />
-              <img src={SEARCH} alt="Laneige" />
-            </div>
-          </div>
+
           <ul className="navBar">
+            <div className="iconsection">
+              <div className="icons">
+                <Link to="/cart">
+                  <img src={CART} alt="Laneige" />
+                </Link>
+                <Link to="/login">
+                  <img src={USER} alt="Laneige" />
+                </Link>
+                <img src={PIN} alt="Laneige" />
+                <img src={SEARCH} alt="Laneige" />
+              </div>
+            </div>
             <li
               className="brand"
               name="dropdownbrand"
