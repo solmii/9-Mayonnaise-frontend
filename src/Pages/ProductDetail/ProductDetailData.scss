@@ -820,6 +820,10 @@
   margin: 0 auto 1.25rem;
   text-align: center;
 }
+.ft-how-to__list {
+  position: relative;
+  margin-left: 400px;
+}
 .ft-how-to__list + .ft-how-to__cover {
   margin-top: 2.5rem;
 }
@@ -986,7 +990,7 @@
   .ft-how-to__list,
   .ft-how-to__side {
     max-width: 394px;
-    margin: auto;
+    margin-left: 450px;
   }
   .ft-how-to__img-list .ft-how-to__img {
     width: calc(25% - 4px);
@@ -1989,7 +1993,10 @@
   margin-right: auto;
 }
 .ft-texture__video {
-  width: 100%;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin-left: 250px;
 }
 
 .texture-compare {

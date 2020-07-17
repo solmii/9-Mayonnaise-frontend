@@ -20,23 +20,23 @@ export default class ProductDetailReview extends Component {
   }
   
   componentDidMount() {
-    fetch(`http://10.58.7.12:8000/review?product_id=1`)
+    fetch(`http://10.58.3.235:8000/review?product_id=1`)
       .then(res => res.json())
       .then(res => this.setState({ data: res.reviews }));
   }
 
   filter = (e) => {
-    this.setState({ filter: e.target.value });
-    console.log("filter >>> ", e.target.value);
+    // this.setState({ filter: e.target.value });
+    // console.log("filter >>> ", e.target.value);
 
-    fetch(`http://10.58.7.12:8000/review?product_id=${this.props.productId}&skin_type_id=${e.target.value}`)
+    fetch(`http://10.58.3.235:8000/review?product_id=${this.props.productId}&skin_type_id=${e.target.value}`)
       .then(res => res.json())
-      .then(res => this.setState({ data: res.reviews }));
+      .then(res => this.setState({data: res.reviews}));
   };
 
 
 getReviewData = () => {
-  fetch(`http://10.58.7.12:8000/review?product_id=${this.props.productId}`)
+  fetch(`http://10.58.3.235:8000/review?product_id=${this.props.productId}`)
     .then((res) => res.json())
     // .then((res) => console.log("ProductDetailReview res: ", res));
     .then((res) => this.setState({ data: res.reviews }));
@@ -44,7 +44,6 @@ getReviewData = () => {
 
 
   render() {
-   
     return (
       <section className="pdp-review">
         <div className="wrapperOver">
@@ -102,6 +101,7 @@ getReviewData = () => {
         <ProductDetailGrid reviewData={this.state.data}/>
         <ProductDetailSource />
       </section>
+    
     );
   }
 }

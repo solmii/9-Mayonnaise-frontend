@@ -14,12 +14,14 @@ export default class SectionThree extends Component {
                 className="imageList1"
                 alt=""
               />
+              <div className="textBox1">
               <p>루미너스 뷰티</p>
               <br />
               <p>
                 수분 가득 맑고 건강하게 빛나는 아름다움, <br />
                 루미너스 뷰티
               </p>
+              </div>
             </div>
             <div className="imageText2">
               <img
@@ -27,6 +29,7 @@ export default class SectionThree extends Component {
                 className="imageList2"
                 alt=""
               />
+              <div className="textBox2">
               <p>네오 쿠션_매트</p>
               <br />
               <p>
@@ -35,12 +38,14 @@ export default class SectionThree extends Component {
                 커버해주는 매트쿠션
               </p>
             </div>
+            </div>
             <div className="imageText1">
               <img
                 src="https://www.laneige.com/kr/ko/layout/main/contents-3/__icsFiles/afieldfile/2019/12/02/feature-a-2.jpg"
                 className="imageList3"
                 alt=""
               />
+              <div className="textBox3">
               <p>워터 슬리핑 마스크</p>
               <br />
               <p>
@@ -48,6 +53,7 @@ export default class SectionThree extends Component {
                 <br />
                 수면팩 부문 1위
               </p>
+              </div>
             </div>
           </div>
         </ul>
