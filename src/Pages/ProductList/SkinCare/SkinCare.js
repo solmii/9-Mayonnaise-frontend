@@ -14,7 +14,7 @@ class SkinCare extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.7.218:8000/product?menu_id=3&offset=${this.state.offset}`
+      `http://10.58.3.235:8000/product?menu_id=3&offset=${this.state.offset}`
     )
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
@@ -23,7 +23,7 @@ class SkinCare extends Component {
   getData = (num) => {
     this.setState({ categoryBox: false });
     fetch(
-      `http://10.58.7.218:8000/product?menu_id=3&type_id=${num}&offset=${this.state.offset}`
+      `http://10.58.3.235:8000/product?menu_id=3&type_id=${num}&offset=${this.state.offset}`
     )
       .then((res) => res.json())
       .then((res) => this.setState({ products: res.product_list }));
@@ -36,8 +36,8 @@ class SkinCare extends Component {
     }
   }
 
-  handleClick = () => {
-    this.props.history.push(`/product?menu_id=${this.state.products.id}`);
+  handleClick = (id) => {
+    this.props.history.push(`/product_detail/${id}`);
   };
 
   handlePaging = (e) => {
@@ -50,9 +50,10 @@ class SkinCare extends Component {
 
   render() {
     const { products, categoryBox } = this.state;
+    console.log(this.state.products);
     return (
       <div className="SkinCare">
-        <Nav />
+        <Nav getData={this.getData} />
         <div className="headerContainer">
           <h1>스킨케어</h1>
         </div>
@@ -160,7 +161,10 @@ class SkinCare extends Component {
           <div className="subBox">
             {products.map((element) => {
               return (
-                <div className="productBox" onClick={this.handleClick}>
+                <div
+                  className="productBox"
+                  onClick={() => this.handleClick(element.product_id)}
+                >
                   <img src={element.product_image} alt="Laneige" />
                   <p>
                     #{element.product_tag[0]} #{element.product_tag[1]}
@@ -178,7 +182,6 @@ class SkinCare extends Component {
           <button onClick={(e) => this.handlePaging(e)}>4</button>
         </div>
         <Footer />
-        {/* <Nav getData={this.getData()} /> */}
       </div>
     );
   }
