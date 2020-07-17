@@ -20,20 +20,21 @@ class ProductDetailGrid extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`http://10.58.7.12:8000/review?product_id=${this.props.productId}`)
-      .then((res) => res.json())
-      // .then((res) => console.log(res));
-      .then((res) => this.setState({ data: res.reviews }));
-  }
+  // componentDidMount() {
+  //   fetch(`http://10.58.3.235:8000/review?product_id=${this.props.productId}`)
+  //     .then((res) => res.json())
+  //     // .then((res) => console.log(res));
+  //     .then((res) => this.setState({ data: res.reviews }));
+  // }
 
   render() {
     console.log("dddddd: ", this.props.reviewData);
     //  const { data } = this.state;
     return  (
+     
       <section id="pattern" class="pattern">
         <div class="grid">
-          {this.props.reviewData && this.props.reviewData.map(data => {
+          {this.props.reviewData.map(data => {
             return(
           <figure>
             <div className="reviewCard">

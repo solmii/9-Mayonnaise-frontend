@@ -1,5 +1,7 @@
 import React from "react";
 import { USER, PIN, SEARCH, CART, ORANGE } from "config";
+import { Link } from "react-router-dom";
+// import SkinCare from "Pages/ProductList/SkinCare/SkinCare";
 import "./Nav.scss";
 
 class Nav extends React.Component {
@@ -51,15 +53,20 @@ class Nav extends React.Component {
               alt="라네즈"
             />
           </div>
-          <div className="iconsection">
-            <div className="icons">
-              <img src={CART} alt="Laneige" />
-              <img src={USER} alt="Laneige" />
-              <img src={PIN} alt="Laneige" />
-              <img src={SEARCH} alt="Laneige" />
-            </div>
-          </div>
+
           <ul className="navBar">
+            <div className="iconsection">
+              <div className="icons">
+                <Link to="/cart">
+                  <img src={CART} alt="Laneige" />
+                </Link>
+                <Link to="/login">
+                  <img src={USER} alt="Laneige" />
+                </Link>
+                <img src={PIN} alt="Laneige" />
+                <img src={SEARCH} alt="Laneige" />
+              </div>
+            </div>
             <li
               className="brand"
               name="dropdownbrand"
@@ -132,15 +139,15 @@ class Nav extends React.Component {
                       <li>유형별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(1)}>클렌징</li>
-                    <li onClick={() => this.getData(2)}>스킨/미스트</li>
-                    <li onClick={() => this.getData(3)}>로션/에멀젼</li>
-                    <li onClick={() => this.getData(4)}>세럼/에센스</li>
-                    <li onClick={() => this.getData(5)}>젤/크림</li>
-                    <li onClick={() => this.getData(6)}>마스크/팩</li>
-                    <li onClick={() => this.getData(7)}>아이케어</li>
-                    <li onClick={() => this.getData(8)}>선케어</li>
-                    <li onClick={() => this.getData(9)}>립케어</li>
+                    <li onClick={() => this.props.getData(1)}>클렌징</li>
+                    <li onClick={() => this.props.getData(2)}>스킨/미스트</li>
+                    <li onClick={() => this.props.getData(3)}>로션/에멀젼</li>
+                    <li onClick={() => this.props.getData(4)}>세럼/에센스</li>
+                    <li onClick={() => this.props.getData(5)}>젤/크림</li>
+                    <li onClick={() => this.props.getData(6)}>마스크/팩</li>
+                    <li onClick={() => this.props.getData(7)}>아이케어</li>
+                    <li onClick={() => this.props.getData(8)}>선케어</li>
+                    <li onClick={() => this.props.getData(9)}>립케어</li>
                     <li>기프트세트</li>
                   </ul>
                   <ul className="secondColumn">
@@ -148,31 +155,33 @@ class Nav extends React.Component {
                       <li>고민별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(10)}>밸런싱</li>
-                    <li onClick={() => this.getData(11)}>수분/보습</li>
-                    <li onClick={() => this.getData(12)}>민감/진정</li>
-                    <li onClick={() => this.getData(13)}>브라이트닝</li>
-                    <li onClick={() => this.getData(14)}>안티에이징</li>
-                    <li onClick={() => this.getData(15)}>피지/모공</li>
-                    <li onClick={() => this.getData(16)}>자외선차단</li>
+                    <li onClick={() => this.props.getData(10)}>밸런싱</li>
+                    <li onClick={() => this.props.getData(11)}>수분/보습</li>
+                    <li onClick={() => this.props.getData(12)}>민감/진정</li>
+                    <li onClick={() => this.props.getData(13)}>브라이트닝</li>
+                    <li onClick={() => this.props.getData(14)}>안티에이징</li>
+                    <li onClick={() => this.props.getData(15)}>피지/모공</li>
+                    <li onClick={() => this.props.getData(16)}>자외선차단</li>
                   </ul>
                   <ul className="thirdColumn">
                     <div className="underline">
                       <li>라인별</li>
                     </div>
                     <li>전체보기</li>
-                    <li onClick={() => this.getData(17)}>래디언-C</li>
-                    <li onClick={() => this.getData(18)}>클리어-C</li>
-                    <li onClick={() => this.getData(19)}>베이직케어</li>
-                    <li onClick={() => this.getData(20)}>워터뱅크</li>
-                    <li onClick={() => this.getData(21)}>포커스 액티브 앰플</li>
-                    <li onClick={() => this.getData(22)}>퍼펙트리뉴</li>
-                    <li onClick={() => this.getData(23)}>타임프리즈</li>
-                    <li onClick={() => this.getData(24)}>슬리핑케어</li>
-                    <li onClick={() => this.getData(25)}>프레시카밍</li>
-                    <li onClick={() => this.getData(26)}>크림 스킨</li>
-                    <li onClick={() => this.getData(27)}>화이트듀</li>
-                    <li onClick={() => this.getData(5)}>기타</li>
+                    <li onClick={() => this.props.getData(17)}>래디언-C</li>
+                    <li onClick={() => this.props.getData(18)}>클리어-C</li>
+                    <li onClick={() => this.props.getData(19)}>베이직케어</li>
+                    <li onClick={() => this.props.getData(20)}>워터뱅크</li>
+                    <li onClick={() => this.props.getData(21)}>
+                      포커스 액티브 앰플
+                    </li>
+                    <li onClick={() => this.props.getData(22)}>퍼펙트리뉴</li>
+                    <li onClick={() => this.props.getData(23)}>타임프리즈</li>
+                    <li onClick={() => this.props.getData(24)}>슬리핑케어</li>
+                    <li onClick={() => this.props.getData(25)}>프레시카밍</li>
+                    <li onClick={() => this.props.getData(26)}>크림 스킨</li>
+                    <li onClick={() => this.props.getData(27)}>화이트듀</li>
+                    <li onClick={() => this.props.getData(5)}>기타</li>
                   </ul>
                   <ul className="fourthColumn">
                     <li>NEW ARRIVAL</li>

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Main from "Pages/Main/Main";
 import Nav from "Components/Nav/Nav.js";
 import Footer from "Components/Footer/Footer.js";
@@ -17,7 +18,7 @@ class Routes extends React.Component {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={Main} />}
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/product_detail" component={ProductDetail} />
@@ -35,7 +36,7 @@ class Routes extends React.Component {
         <Footer />
       </Router>
     );
-  }
+  
 }
 
 export default Routes;

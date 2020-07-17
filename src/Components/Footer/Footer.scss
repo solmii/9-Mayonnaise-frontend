@@ -1,5 +1,4 @@
 .footer {
-  position: fixed;
   bottom: 80px;
   left: 0;
   width: 100%;
@@ -29,6 +28,7 @@
 
   .bottomInfo {
     display: flex;
+    position: relative;
     margin-left: 360px;
     margin-top: 2px;
     margin-bottom: 20px;
@@ -48,25 +48,25 @@
         }
       }
     }
+    .social {
+      position: absolute;
+      right: 250px;
+      bottom: 40px;
+      img {
+        padding-left: 20px;
+      }
+    }
+    .wa {
+      position: absolute;
+      right: 250px;
+      top: 0px;
+      height: 55px;
+    }
   }
   .third {
     margin-left: 320px;
     padding-left: 40px;
     font-size: 14.5px;
     font-family: Helvetica, sans-serif;
-  }
-  .social {
-    position: fixed;
-    right: 370px;
-    bottom: 155px;
-    img {
-      padding-left: 20px;
-    }
-  }
-  .wa {
-    position: fixed;
-    right: 370px;
-    bottom: 80px;
-    height: 55px;
   }
 }

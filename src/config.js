@@ -51,7 +51,6 @@ export const LOGIN_BG_SM =
 export const LOGIN_BG_LG =
   "https://www.laneige.com/kr/ko/assets/image/login/login-bg-lg.jpg";
 
-
 export const WARNING_ICON = warning;
 export const CHECKED_ICON = checked;
 

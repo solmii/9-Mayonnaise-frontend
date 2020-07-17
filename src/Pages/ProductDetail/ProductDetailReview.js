@@ -20,15 +20,22 @@ export default class ProductDetailReview extends Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     fetch(`http://10.58.7.12:8000/review?product_id=1`)
       .then((res) => res.json())
       .then((res) => this.setState({ data: res.reviews }));
+=======
+    fetch(`http://10.58.3.235:8000/review?product_id=1`)
+      .then(res => res.json())
+      .then(res => this.setState({ data: res.reviews }));
+>>>>>>> 30f8b491b575632c364838d0a9888a2c8522b085
   }
 
   filter = (e) => {
-    this.setState({ filter: e.target.value });
-    console.log("filter >>> ", e.target.value);
+    // this.setState({ filter: e.target.value });
+    // console.log("filter >>> ", e.target.value);
 
+<<<<<<< HEAD
     fetch(
       `http://10.58.7.12:8000/review?product_id=${this.props.productId}&skin_type_id=${e.target.value}`
     )
@@ -42,6 +49,21 @@ export default class ProductDetailReview extends Component {
       // .then((res) => console.log("ProductDetailReview res: ", res));
       .then((res) => this.setState({ data: res.reviews }));
   };
+=======
+    fetch(`http://10.58.3.235:8000/review?product_id=${this.props.productId}&skin_type_id=${e.target.value}`)
+      .then(res => res.json())
+      .then(res => this.setState({data: res.reviews}));
+  };
+
+
+getReviewData = () => {
+  fetch(`http://10.58.3.235:8000/review?product_id=${this.props.productId}`)
+    .then((res) => res.json())
+    // .then((res) => console.log("ProductDetailReview res: ", res));
+    .then((res) => this.setState({ data: res.reviews }));
+}
+
+>>>>>>> 30f8b491b575632c364838d0a9888a2c8522b085
 
   render() {
     return (
@@ -110,6 +132,7 @@ export default class ProductDetailReview extends Component {
         <ProductDetailGrid reviewData={this.state.data} />
         <ProductDetailSource />
       </section>
+    
     );
   }
 }

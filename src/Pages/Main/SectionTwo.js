@@ -51,11 +51,12 @@ export default class SectionTwo extends Component {
                 type="video/mp4"
               />
             </video>
-            <p className="headerTitle_MJ">best seller</p>
+           
           </div>
         </div>
         <div className="SectionMainOne_MJ">
           <div className="MainSlider_MJ">
+            <div className="BestSellerTitle">BEST SELLER</div>
             <Slider {...settings}>
               <div className="1">
                 <img
@@ -66,8 +67,9 @@ export default class SectionTwo extends Component {
                 <p className="imageInfo3">
                   CREAM SKIN REFINER
                   <br />
-                  크림스킨
-                  <br />
+                  <strong className="creamSkin">크림스킨
+                  
+                  </strong><br />
                   <p className="icon">
                     
                   </p>
@@ -86,16 +88,16 @@ export default class SectionTwo extends Component {
                   src="https://www.laneige.com/kr/ko/layout/main/best-seller/__icsFiles/afieldfile/2019/11/15/bestseller-1.png"
                 />
                 <p className="imageInfo3">
-                  CREAM SKIN REFINER
+                   WATER SLEEPING MASK
                   <br />
-                  크림스킨
+                  워터 슬리핑 마스크
                   <br />
-                  스킨인데 뛰어난 보습지속력과, 산뜻한
+                  수분감 충만한 슬리핑팩! 밤에 듬뿍
                   <br />
-                  사용감으로 이만한 스킨은 없는 것<br />
-                  같아요
+                 바르고 자고 일어나면 아침에 화장이<br />
+                  매우 잘먹는다
                   <br />
-                  @rabb********
+                  @heat********
                 </p>
               </div>
               <div className="3">
@@ -105,19 +107,19 @@ export default class SectionTwo extends Component {
                   src="https://www.laneige.com/kr/ko/layout/main/best-seller/__icsFiles/afieldfile/2019/11/15/bestseller-2.png"
                 />
                 <p className="imageInfo3">
-                  CREAM SKIN REFINER
+                  SKIN VEIL BASE
                   <br />
-                  크림스킨
+                  스킨 베일 베이스
                   <br />
                   <p className="icon">
                     
                   </p>
-                  스킨인데 뛰어난 보습지속력과, 산뜻한
+                  피부 색이 탁해서 베이스를 무조건
                   <br />
-                  사용감으로 이만한 스킨은 없는 것<br />
-                  같아요
+                  깔아줘야하는 피부였는데 이거<br />
+                  쓰고나서 정착했어요
                   <br />
-                  @rabb********
+                  @du**********
                 </p>
               </div>
               <div className="4">
@@ -127,19 +129,19 @@ export default class SectionTwo extends Component {
                   src="https://www.laneige.com/kr/ko/layout/main/best-seller/__icsFiles/afieldfile/2019/11/15/bestseller-3.png"
                 />
                 <p className="imageInfo3">
-                  CREAM SKIN REFINER
+                  WATER BANK HYDRO ESSENCE
                   <br />
-                  크림스킨
+                  워터뱅크 하이드로 에센스
                   <br />
                   <img
                   className="Icon1"
                   alt="main_slider1"
                   src="/www.laneige.com/kr/ko/skincare/cream-skin-refiner.html"
                 />
-                  스킨인데 뛰어난 보습지속력과, 산뜻한
+                  얼굴도 속당김없이 여전히 촉촉하구요
                   <br />
-                  사용감으로 이만한 스킨은 없는 것<br />
-                  같아요
+                  재구매의사 100%에요 다들 정말<br />
+                  추천합니다
                   <br />
                   @rabb********
                 </p>
@@ -151,14 +153,14 @@ export default class SectionTwo extends Component {
                   src="https://www.laneige.com/kr/ko/layout/main/best-seller/__icsFiles/afieldfile/2019/11/15/bestseller-4.png"
                 />
                 <p className="imageInfo3">
-                  CREAM SKIN REFINER
+                 LIP SLEEPING MASK
                   <br />
-                  크림스킨
+                  립 슬리핑 마스크
                   <br />
-                  스킨인데 뛰어난 보습지속력과, 산뜻한
+                  자기전 딱 바르고 나면 다음 날 입술
                   <br />
-                  사용감으로 이만한 스킨은 없는 것<br />
-                  같아요
+                  컨디션이 넘넘 좋아져서 요즘 매일 사용<br />
+                  하고 있어요
                   <br />
                   @rabb********
                 </p>
@@ -170,13 +172,13 @@ export default class SectionTwo extends Component {
                   src="https://www.laneige.com/kr/ko/layout/main/best-seller/__icsFiles/afieldfile/2019/11/15/bestseller-5.png"
                 />
                 <p className="imageInfo3">
-                  CREAM SKIN REFINER
+                  LAYERING COVER CUSHION
                   <br />
                   크림스킨
                   <br />
-                  스킨인데 뛰어난 보습지속력과, 산뜻한
+                  컨실러랑 쿠션이 함께라서 옴총 편한
                   <br />
-                  사용감으로 이만한 스킨은 없는 것<br />
+                  라네즈 로지 쿠션<br />
                   같아요
                   <br />
                   @rabb********
