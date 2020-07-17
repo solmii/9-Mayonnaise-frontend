@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import Rating from "react-rating";
-import { ARROW_ICON, STAR_EMPTY, STAR_FILL } from "config";
+import { STAR_EMPTY, STAR_FILL } from "config";
 
 const ReviewModal = () => {
   const [reviewImg, setReviewImg] = useState({

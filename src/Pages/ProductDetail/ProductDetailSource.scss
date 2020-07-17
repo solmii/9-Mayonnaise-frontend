@@ -10,7 +10,7 @@
 // }
 .accordion {
   margin-top: 100px;
-  margin-left: 550px;
+  margin: 0 auto;
   width: 800px;
 }
 .accordion input {
@@ -31,8 +31,6 @@
   left: 0;
   right: 0;
   pointer-events: none;
-  box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
 }
 header.box {
   background: #00bcd4;
