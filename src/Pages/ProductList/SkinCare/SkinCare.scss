@@ -1,0 +1,180 @@
+.SkinCare {
+  .show {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .headerContainer {
+    min-height: 300px;
+    max-height: 300px;
+    width: 100vw;
+    background-image: url("https://www.laneige.com/kr/ko/skincare/__icsFiles/metafile/2019/11/26/skincare-header-bg-lg.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      font-size: 39px;
+      font-weight: thin;
+    }
+  }
+  .topBox {
+    position: absolute;
+    display: flex;
+    top: 80px;
+    left: 40px;
+
+    p {
+      font-size: 13.5px;
+      color: rgb(59, 59, 59);
+      font-weight: normal;
+      &:nth-of-type(2) {
+        padding-left: 10px;
+      }
+    }
+  }
+  .filterCategoryWrapper {
+    display: flex;
+    margin-left: 350px;
+    margin-top: 50px;
+
+    .categoryBox {
+      display: flex;
+      margin-left: 5px;
+      border: 1px solid rgb(214, 214, 214);
+      width: 180px;
+      height: 47px;
+      &:hover {
+        cursor: pointer;
+      }
+
+      .letterCategory {
+        padding: 13px 16px;
+        color: rgb(61, 60, 60);
+        font-size: 15px;
+      }
+
+      .plusSign,
+      .minusSign {
+        padding-left: 60px;
+        padding-top: 10px;
+        font-size: 25px;
+        color: rgb(71, 71, 71);
+      }
+
+      .closeSign {
+        padding-left: 78px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: rgb(71, 71, 71);
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .numberOfProducts {
+    position: absolute;
+    top: 440px;
+    right: 370px;
+    color: rgb(141, 140, 140);
+    font-size: 10 px;
+  }
+  .categoryBoxIsOpened {
+    padding: 20px 60px;
+    margin-top: 10px;
+    margin-left: 355px;
+    width: 1178px;
+    height: 310px;
+    border: rgb(189, 187, 187) 1px solid;
+    .seeAll {
+      margin-bottom: 20px;
+      color: #4477be;
+      text-decoration: underline;
+    }
+    .underline {
+      width: 320px;
+      p {
+        margin-bottom: 10px;
+      }
+    }
+    .wholeBox {
+      display: flex;
+      width: 1170px;
+      height: 300px;
+      .boxInCategoryBox {
+        width: 350px;
+        height: 200px;
+        .division {
+          display: flex;
+          .subDivision {
+            padding-top: 10px;
+            width: 200px;
+            height: 200px;
+            &:hover {
+              cursor: pointer;
+            }
+            p {
+              padding-top: 13px;
+              color: rgb(92, 91, 91);
+              font-size: 15px;
+              font-weight: lighter;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mainContentsWhole {
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-top: 50px;
+    .subBox {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .productBox {
+        margin-top: 40px;
+        width: 350px;
+        height: 414px;
+        text-align: center;
+        border-bottom: rgb(224, 223, 223) solid 1px;
+        &:hover {
+          cursor: url("https://www.laneige.com/kr/ko/assets/image/a/pointer.png"),
+            pointer;
+        }
+        img {
+          width: 280px;
+          height: 336px;
+        }
+        p {
+          color: rgb(175, 173, 173);
+          font-size: 14px;
+        }
+        h1 {
+          padding-top: 10px;
+          color: rgb(51, 51, 51);
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .paginationBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    button {
+      color: black;
+      padding: 15px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
