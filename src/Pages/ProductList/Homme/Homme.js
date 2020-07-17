@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "Components/Nav/Nav";
+import Footer from "Components/Footer/Footer";
 import "./Homme.scss";
 
 class Homme extends Component {
@@ -35,6 +37,7 @@ class Homme extends Component {
     const { products, categoryBox } = this.state;
     return (
       <div className="Homme">
+        <Nav />
         <div className="headerContainer">
           <h1>옴므</h1>
         </div>
@@ -143,6 +146,7 @@ class Homme extends Component {
         <div className="paginationBox">
           <button>1</button>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -44,7 +44,7 @@ class Nav extends React.Component {
               : "overlay"
           }
         />
-        <div className="container">
+        <div className="container_JK">
           <div className="logo">
             <img
               src="https://www.laneige.com/kr/ko/assets/image/a/laneige-logo.svg"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Nav from "Components/Nav/Nav";
+import Footer from "Components/Footer/Footer";
 import "./SkinCare.scss";
 class SkinCare extends Component {
   constructor() {
@@ -176,6 +177,7 @@ class SkinCare extends Component {
           <button onClick={(e) => this.handlePaging(e)}>3</button>
           <button onClick={(e) => this.handlePaging(e)}>4</button>
         </div>
+        <Footer />
         {/* <Nav getData={this.getData()} /> */}
       </div>
     );
