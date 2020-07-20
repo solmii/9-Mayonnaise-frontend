@@ -5,7 +5,7 @@ import { HistoryData } from "./HistoryData";
 
 const CampaignHistory = () => {
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
