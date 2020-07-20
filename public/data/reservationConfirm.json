@@ -1,0 +1,28 @@
+{
+	"reservation_list": [
+		{
+			"name": "위코더",
+			"phone_number": "01012345678",
+			"reservation_date": "2020-07-22",
+			"reservation_time": "1:00 PM",
+			"reservation_store": "라네즈 플래그십 스토어 명동점",
+			"reservation_no": "F16D30CBBE"
+		},
+		{
+			"name": "위코더",
+			"phone_number": "01012345678",
+			"reservation_date": "2020-07-28",
+			"reservation_time": "5:30 PM",
+			"reservation_store": "라네즈 로드샵 가로수길점",
+			"reservation_no": "8D9298E25B"
+		},
+		{
+			"name": "위코더",
+			"phone_number": "01012345678",
+			"reservation_date": "2020-07-30",
+			"reservation_time": "10:30 AM",
+			"reservation_store": "라네즈 플래그십 스토어 명동점",
+			"reservation_no": "02B0A574C0"
+		}
+	]
+}

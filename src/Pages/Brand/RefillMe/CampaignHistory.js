@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 import Slider from "react-slick";
 import { HistoryData } from "./HistoryData";
-import styled from "styled-components";
 
 const CampaignHistory = () => {
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -13,10 +14,10 @@ const CampaignHistory = () => {
   };
 
   return (
-    <SilderForm>
+    <HistorySilderForm>
       <Slider {...settings}>
-        {HistoryData.map((data) => (
-          <article>
+        {HistoryData.map((data, idx) => (
+          <article key={idx}>
             <div className="descForm">
               <h1 className="brandFont">{data.slider_title}</h1>
               <p>{data.slider_first_desc}</p>
@@ -26,23 +27,34 @@ const CampaignHistory = () => {
           </article>
         ))}
       </Slider>
-    </SilderForm>
+    </HistorySilderForm>
   );
 };
 
 export default CampaignHistory;
 
-const SilderForm = styled.section`
+const HistorySilderForm = styled.section`
   width: 100vw;
+  overflow: hidden;
+  margin-top: 50px;
+
+  .slick-list {
+    top: 0;
+    left: 14%;
+    padding-left: 14%;
+    width: 100%;
+    overflow: visible;
+  }
 
   article {
     position: relative;
+    margin: 0 auto;
     outline: none;
 
     .descForm {
       position: absolute;
       top: 16%;
-      left: 22%;
+      left: -15%;
       max-width: 320px;
 
       h1 {

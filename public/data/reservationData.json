@@ -1,0 +1,42 @@
+{
+	"reservationUser": {
+		"userName": "테스트",
+		"userPhoneNum": "01012345678",
+		"userGender": "female"
+	},
+
+	"reservation_list": [
+		{
+			"reservationNum": "F16D30CBBE",
+			"userName": "테스트",
+			"userPhoneNum": "01012345678",
+			"reservationDate": "2020-07-26",
+			"reservationTime": "10:30 AM",
+			"reservationStore": "라네즈 플래그십 스토어 명동점"
+		},
+		{
+			"reservationNum": "8D9298E25B",
+			"userName": "테스트",
+			"userPhoneNum": "01012345678",
+			"reservationDate": "2020-07-28",
+			"reservationTime": "5:30 PM",
+			"reservationStore": "라네즈 로드샵 가로수길점"
+		},
+		{
+			"reservationNum": "02B0A574C0",
+			"userName": "테스트",
+			"userPhoneNum": "01012345678",
+			"reservationDate": "2020-07-30",
+			"reservationTime": "3:20 PM",
+			"reservationStore": "라네즈 로드샵 이대점"
+		},
+		{
+			"reservationNum": "8F864ACF8A",
+			"userName": "테스트",
+			"userPhoneNum": "01012345678",
+			"reservationDate": "2020-08-04",
+			"reservationTime": "1:00 PM",
+			"reservationStore": "라네즈 플래그십 스토어 명동점"
+		}
+	]
+}

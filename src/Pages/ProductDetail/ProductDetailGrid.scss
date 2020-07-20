@@ -1,61 +1,59 @@
 .grid {
-  column-count: 3;
-  column-gap: 20px;
-  width: 980px;
-  margin: 0 auto;
-  figure {
-    display: inline-block;
-    width: 100%;
-    margin: 0 0 20px 0;
-    background: #fff;
-    padding-bottom: 40px;
+	column-count: 3;
+	column-gap: 20px;
+	width: 980px;
+	margin: 0 auto;
+	figure {
+		display: inline-block;
+		width: 100%;
+		height: 240px;
+		margin: 0 0 20px 0;
+		background: #fff;
+		padding-bottom: 40px;
+		&:hover {
+			cursor: url('http://www.laneige.com/kr/ko/assets/image/a/pointer.png'), pointer;
+		}
 
-    color: #5f5f5f;
-    div {
-      display: inline-block;
-      padding: 40px 30px 40px 30px;
-      height: 40px;
-      white-space: normal;
-      word-break: break-all;
-    }
-  }
-}
-figure {
-  &:hover {
-    cursor: url("http://www.laneige.com/kr/ko/assets/image/a/pointer.png"),
-      pointer;
-  }
+		color: #5f5f5f;
+		div {
+			display: inline-block;
+			padding: 40px 30px 40px 30px;
+			height: 40px;
+			white-space: normal;
+			word-break: break-all;
+		}
+	}
 }
 .reviewCard {
-  padding: 30px;
+	padding: 30px;
 }
 .Card1 {
-  display: block;
-  margin-bottom: 10px;
+	display: block;
+	margin-bottom: 10px;
 }
 .Card2 {
-  margin-right: 15px;
+	margin-right: 15px;
 }
 .Card4 {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 .Card5 {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 .CardTop {
-  display: block;
+	display: block;
 }
 .grid figure div {
-  height: 16px;
-  padding: 0px;
-  margin-bottom: 10px;
+	height: 16px;
+	padding: 0px;
+	margin-bottom: 10px;
 }
 .productImg33 {
-  display: inline-block;
+	display: inline-block;
 }
 .CardMid {
-  display: block;
+	display: block;
 }
 .grid figure {
-  padding: 30px;
+	padding: 30px;
 }

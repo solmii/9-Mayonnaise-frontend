@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { isId, isPassword } from "./RegisterTest";
-// import { CHECKED_ICON } from "config";
+import { SIGN_API } from "config";
 import "./SignUp.scss";
 
 const SignUp = () => {
@@ -143,8 +144,8 @@ const SignUp = () => {
   const onSubmit = (data) => {
     if (idValidation && pwValidation) {
       clauseAll || (clause1 && clause2)
-        ? fetch("http://10.58.6.55:8000/account/sign_up", {
-            method: "post",
+        ? fetch(`${SIGN_API}/sign-up`, {
+            method: "POST",
             headers: {},
             body: JSON.stringify({
               name: data.name,
@@ -152,12 +153,11 @@ const SignUp = () => {
               birthdate: data.birthDate,
               gender: data.gender,
               phone_number: data.phoneNumber,
-              user_id: data.id,
+              user_email: data.id,
             }),
           }).then((res) => {
             if (res.status === 200 || res.status === 201) {
               alert("회원가입이 완료되었습니다.");
-              this.props.history.push("/login");
             }
           })
         : alert("필수 동의 항목에 동의해 주세요");
@@ -342,10 +342,12 @@ const SignUp = () => {
               </li>
             </ul>
 
-            <h3>광고성 정보 수신 동의</h3>
-            <span className="clausDescription2">
-              쇼핑 혜택, 이벤트 소식을 받아보세요
-            </span>
+            <h3>
+              광고성 정보 수신 동의
+              <span className="clausDescription2">
+                쇼핑 혜택, 이벤트 소식을 받아보세요
+              </span>
+            </h3>
             <ul>
               <li className="checkBtn">
                 <CheckInput
@@ -392,7 +394,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default withRouter(SignUp);
 
 const CheckInput = styled.input`
   background-image: url({CHECKED_ICON});
