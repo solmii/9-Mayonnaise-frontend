@@ -15,7 +15,7 @@ class SectionOne extends Component {
             <AutoplaySlider
               arrow={true}
               play={true}
-              cancelOnInteraction={false} // should stop playing on user interaction
+              cancelOnInteraction={false} 
               interval={3000}
             >
               <div data-src="https://www.laneige.com/kr/ko/layout/main/key-visual/__icsFiles/afieldfile/2020/06/17/20200617_neo-cushion_KV_pc_1.png"></div>

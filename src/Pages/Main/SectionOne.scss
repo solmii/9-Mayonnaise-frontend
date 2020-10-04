@@ -1,12 +1,13 @@
 .SectionOne {
-  margin-top: 60px;
   .MainSlide {
     width: 1920px;
     height: 818px;
     display: flex;
     position: absolute;
     z-index: 1000;
-
+    .awssld {
+      --loader-bar-color: white;
+    }
     .awssld__content {
       .bgVideo {
         width: 1920px;
