@@ -12,7 +12,7 @@ export default class ProductDetail extends Component {
     };
   }
 
-  // 장바구니 버튼 클릭시 상품 정보 POST로 서버에 전송
+  
   addCartHandler = () => {
     fetch("http://10.58.1.117:8000/order/cart", {
       method: "post",
@@ -88,12 +88,7 @@ export default class ProductDetail extends Component {
                       <img
                         className="productImg"
                         src={this.state.productDetail.product_images[0]}
-                        // src={
-                        // this.state.productDetail.product_images.length > 0 &&
-                        // this.state.productDetail.product_images[1]
-                        // `sub${this.state.subIdNum + 1}` //서브이미지가 클릭될 때마다 여기가 변해야함
-                        //메인사진, product_feature에 어떤것이 있고 product_feature의 product_images일때 컬러가 coloridnum+1씩 해준다
-                        //궁금한게 같이 넘어오는 사진인데 state.이름만 다르게 해서 각각 받을 수 있는지 궁금함 아니면 너무 헷갈린다..
+                       
                         alt=""
                       />
                     </div>
@@ -143,56 +138,7 @@ export default class ProductDetail extends Component {
                       </div>
                     </div>
                   </div>
-                  {/* <ul className="imgCollection">
-                  <li>
-                    <img
-                      className="img"
-                      src={
-                        this.state.product_feature.length !== 0 &&
-                        this.state.product_feature.product_images[
-                          `color${this.state.subIdNum + 1}`
-                        ][this.state.subId]
-                      }
-                      alt=""
-                    />
-                  </li>
-                  <li>
-                    <img
-                      className="img"
-                      src={
-                        this.state.product_feature.length !== 0 &&
-                        this.state.product_feature.product_images[
-                          `color${this.state.subIdNum + 1}`
-                        ][this.state.subId + 1]
-                      }
-                      alt=""
-                    />
-                  </li>
-                  <li>
-                    <img
-                      className="img"
-                      src={
-                        this.state.product_feature.length !== 0 &&
-                        this.state.product_feature.product_images[
-                          `color${this.state.subIdNum + 1}`
-                        ][this.state.subId + 2]
-                      }
-                      alt=""
-                    />
-                  </li>
-                  <li>
-                    <img
-                      className="img"
-                      src={
-                        this.state.product_feature.length !== 0 &&
-                        this.state.product_feature.product_images[
-                          `color${this.state.subIdNum + 1}`
-                        ][this.state.subId + 3]
-                      }
-                      alt=""
-                    />
-                  </li>
-                </ul> */}
+                 
                 </div>
               </header>
               <section>
