@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import "./SectionThree.scss";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+  easing: 'ease-out-back',
+  duration: 1000
+});
+
+
 
 export default class SectionFour extends Component {
   render() {
@@ -9,7 +18,7 @@ export default class SectionFour extends Component {
         <ul className="ulImg">
           <div className="imageListClass">
             <div className="imageText1">
-              <img
+              <img data-aos="fade-down"
                 className="imageListMiddle1"
                 src="https://www.laneige.com/kr/ko/layout/main/contents-4/__icsFiles/afieldfile/2019/12/02/feature-b-0.jpg"
                 alt="스테인드 글로우 립밤 - 2019 상반기 언파 뷰티 리뷰 위너스 립밤 부문 위너"
@@ -23,7 +32,7 @@ export default class SectionFour extends Component {
             </div>
 
             <div className="imageText1">
-              <img
+              <img data-aos="fade-up"
                 className="imageListMiddle2"
                 src="https://www.laneige.com/kr/ko/layout/main/contents-4/__icsFiles/afieldfile/2019/12/02/feature-b-1.jpg"
                 alt="MY DELICIOUS THERAPY"
@@ -40,7 +49,7 @@ export default class SectionFour extends Component {
             </div>
             <div className="secondBottom">
               <div className="imageText6">
-                <img
+                <img data-aos="fade-up"
                   className="imageListMiddle3"
                   src="https://www.laneige.com/kr/ko/layout/main/contents-4/__icsFiles/afieldfile/2020/01/03/200103-feature-b-2.jpg"
                   alt="레이어링 립 바"
@@ -51,7 +60,7 @@ export default class SectionFour extends Component {
                 <p>한 번의 터치로,리얼 볼륨 그라데이션을 완셩하세요.</p></div>
               </div>
               <div className="imageText6">
-                <img
+                <img data-aos="fade-down"
                   className="imageListMiddle4"
                   src="https://www.laneige.com/kr/ko/layout/main/contents-4/__icsFiles/afieldfile/2019/12/02/feature-b-3.jpg"
                   alt="라네즈 리필 미 캠페인"

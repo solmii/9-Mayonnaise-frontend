@@ -3,6 +3,7 @@
   overflow: hidden;
   .bgVideo {
     width: 1920px;
+    height: 1080px;
   }
 }
 
@@ -18,97 +19,60 @@
     font-size: 42px;
     font-weight: bold;
   }
-  .imageOne {
-    width: 250px;
-    height: 300px;
-    margin: 0%;
-    overflow: hidden;
-    border: 0;
-    outline: 0;
-  }
-  .1 {
-    border: 0;
-    outline: 0;
-  }
-  .imageTwo {
-    width: 250px;
-    height: 300px;
-    margin: 0px;
-    overflow: hidden;
-  }
-  .imageThree {
-    margin: 0px;
-    width: 250px;
-    height: 300px;
-    margin: 0%;
-    overflow: hidden;
-  }
-  .imageFour {
-    width: 250px;
-    height: 300px;
-    margin: 0px;
-  }
-  .imageFive {
-    width: 250px;
-    height: 300px;
-    margin: 0px;
-  }
-  .imageSix {
-    width: 250px;
-    height: 300px;
-    margin: 0%;
-  }
-}
-.headerTitle_MJ {
-  color: #000;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 42px;
-  text-align: center;
-  position: absolute;
-  top: 5%;
-  left: 45%;
-  margin-bottom: 1.25rem;
-}
-.slick-slide > div {
-  display: inline-block;
-}
+  .listPhoto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    .PhotoListOne {
+      display: block;
+      .imageOne {
+        position: relative;
+        top: -200px;
+        width: 250px;
+        height: 300px;
+        margin: 0%;
+        overflow: hidden;
+        border: 0;
+        outline: 0;
+        transform: rotate(0deg);
+        transition: 1s;
 
-.slick-arrow.slick-prev {
-  position: relative;
-  top: -50px;
-  left: 40px;
-  z-index: 7;
-}
+        &:hover {
+          transform: rotate(-25deg);
+        }
+      }
+    }
+    .imageTwo {
+      position: relative;
+      top: -200px;
+      width: 250px;
+      height: 300px;
+      margin: 0%;
+      overflow: hidden;
+      border: 0;
+      outline: 0;
+      transform: rotate(0deg);
+      transition: 1s;
 
-.slick-arrow.slick-next {
-  position: absolute;
-  top: -50px;
-  right: 40px;
-  z-index: 7;
-}
+      &:hover {
+        transform: rotate(-25deg);
+      }
+    }
+    .imageThree {
+      position: relative;
+      top: -200px;
+      width: 250px;
+      height: 300px;
+      margin: 0%;
+      overflow: hidden;
+      border: 0;
+      outline: 0;
+      transform: rotate(0deg);
+      transition: 1s;
 
-.slick-list {
-  position: absolute;
-  width: 1000px;
-  top: -250px;
-  left: 60px;
-}
-.imageInfo3 {
-  display: block;
-  text-align: center;
-}
-.slick-slider.slick-initialized {
-  height: 410px;
-}
-.laneige_bestseller_MJ {
-  position: relative;
-}
-.imgInfo3 {
-  position: relative;
-  margin: 30px;
-}
-.creamSkin {
-  position: relative;
-  margin-bottom: 30px;
+      &:hover {
+        transform: rotate(-25deg);
+      }
+    }
+  }
 }

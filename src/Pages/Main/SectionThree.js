@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import "./SectionThree.scss";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+  easing: 'ease-out-back',
+  duration: 1000
+});
 
 export default class SectionThree extends Component {
   render() {
@@ -9,7 +16,7 @@ export default class SectionThree extends Component {
         <ul className="ulImg">
           <div className="imageListClass">
             <div className="imageText1">
-              <img
+              <img data-aos="fade-up"
                 src="https://www.laneige.com/kr/ko/layout/main/contents-3/__icsFiles/afieldfile/2019/12/02/feature-a-0.jpg"
                 className="imageList1"
                 alt=""
@@ -24,7 +31,7 @@ export default class SectionThree extends Component {
               </div>
             </div>
             <div className="imageText2">
-              <img
+              <img data-aos="fade-down"
                 src="https://www.laneige.com/kr/ko/layout/main/contents-3/__icsFiles/afieldfile/2020/06/18/20201617_neo_cushion_foundation_new-arrivals_01.png"
                 className="imageList2"
                 alt=""
@@ -40,7 +47,7 @@ export default class SectionThree extends Component {
             </div>
             </div>
             <div className="imageText1">
-              <img
+              <img data-aos="fade-up"
                 src="https://www.laneige.com/kr/ko/layout/main/contents-3/__icsFiles/afieldfile/2019/12/02/feature-a-2.jpg"
                 className="imageList3"
                 alt=""
